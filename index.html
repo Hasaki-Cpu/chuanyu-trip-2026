@@ -1,0 +1,1592 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026年8月10日至17日，长春—成都—九寨沟—乐山—重庆—长春，2人非自驾逐日旅行计划。">
+  <title>川渝八日 · 每日详细行程</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f3f6f0;
+      --surface: #ffffff;
+      --surface-2: #e7efe9;
+      --ink: #17221e;
+      --muted: #5d6c66;
+      --line: #cdd8d1;
+      --lake: #087f8c;
+      --lake-2: #2caa9b;
+      --sandstone: #bd5b38;
+      --sun: #e0a126;
+      --night: #172d4b;
+      --danger: #a1322e;
+      --success: #276b45;
+      --focus: #0a67c2;
+      --radius: 18px;
+      --radius-sm: 10px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 48px;
+      --space-8: 64px;
+      --content: 1180px;
+      --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      --display: "STKaiti", "KaiTi", "Noto Serif SC", serif;
+      --mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    button { touch-action: manipulation; }
+    svg { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+    h2 { font-size: clamp(1.55rem, 3vw, 2.25rem); line-height: 1.2; letter-spacing: -.03em; }
+    h3 { font-size: 1.08rem; line-height: 1.35; }
+    .skip-link {
+      position: fixed; left: 16px; top: -80px; z-index: 1000;
+      padding: 12px 16px; background: var(--ink); color: #fff; border-radius: 8px;
+    }
+    .skip-link:focus { top: 16px; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    .container { width: min(calc(100% - 32px), var(--content)); margin-inline: auto; }
+
+    .icon {
+      width: 20px; height: 20px; flex: 0 0 20px;
+      fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .eyebrow {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+      color: var(--lake); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .utility { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+    .muted { color: var(--muted); }
+    .tag {
+      display: inline-flex; align-items: center; min-height: 30px; padding: 4px 10px;
+      border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--surface);
+      font-size: .78rem; font-weight: 700;
+    }
+    .tag.urgent { color: #fff; background: var(--danger); border-color: var(--danger); }
+    .tag.good { color: #fff; background: var(--success); border-color: var(--success); }
+    .tag.alt { color: var(--night); background: #e3ecf7; border-color: #bed0e3; }
+
+    .hero {
+      position: relative; overflow: hidden; color: #fff; background: var(--night);
+      padding: 38px 0 32px;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(118deg, transparent 0 62%, rgba(44,170,155,.18) 62% 73%, transparent 73%),
+        radial-gradient(circle at 18% 30%, rgba(44,170,155,.26), transparent 27%),
+        linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+      background-size: auto, auto, 38px 38px, 38px 38px;
+      pointer-events: none;
+    }
+    .hero-grid { position: relative; display: grid; gap: 26px; }
+    .hero .eyebrow { color: #a8eadf; }
+    .hero h1 {
+      max-width: 790px; margin-bottom: 16px; font-family: var(--display); font-weight: 700;
+      font-size: clamp(2.75rem, 10vw, 6.4rem); line-height: .94; letter-spacing: -.06em;
+    }
+    .hero h1 span { color: #65d0c0; }
+    .hero-lead { max-width: 710px; margin-bottom: 20px; color: #dbe8e4; font-size: clamp(1rem, 2vw, 1.18rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 10px 16px; border: 1px solid transparent; border-radius: 12px; cursor: pointer;
+      background: var(--lake-2); color: #092d2a; font-weight: 800; text-decoration: none;
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .12s ease;
+    }
+    .btn:hover { background: #77ded0; }
+    .btn:active { transform: scale(.97); }
+    .btn.secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,.45); }
+    .btn.secondary:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+    .btn.small { min-height: 44px; padding: 8px 13px; font-size: .88rem; }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,.18); border-radius: var(--radius); background: rgba(255,255,255,.18);
+    }
+    .hero-stat { min-height: 112px; padding: 16px; background: rgba(16,40,63,.94); }
+    .hero-stat strong { display: block; font-family: var(--mono); font-size: 1.35rem; color: #fff; }
+    .hero-stat span { display: block; margin-top: 4px; color: #b8c9c5; font-size: .78rem; }
+    .danger-strip {
+      position: relative; padding: 14px 0; background: var(--sun); color: #271a03; font-weight: 800;
+    }
+    .danger-strip .container { display: flex; align-items: flex-start; gap: 10px; }
+
+    .route-ticket { position: relative; margin-top: 4px; padding: 22px 18px; border: 1px solid rgba(255,255,255,.2); border-radius: var(--radius); background: rgba(255,255,255,.07); }
+    .route-ticket::before, .route-ticket::after {
+      content: ""; position: absolute; top: 50%; width: 22px; height: 22px; border-radius: 50%; background: var(--night); transform: translateY(-50%);
+    }
+    .route-ticket::before { left: -12px; }
+    .route-ticket::after { right: -12px; }
+    .ticket-line { display: grid; grid-template-columns: repeat(7, 1fr); position: relative; align-items: start; }
+    .ticket-line::before { content: ""; position: absolute; top: 10px; left: 8%; right: 8%; height: 2px; background: linear-gradient(90deg,#65d0c0 0 52%, #d99d32 52% 72%, #e1e7e4 72%); }
+    .ticket-stop { position: relative; z-index: 1; text-align: center; color: #dce8e5; font-size: .7rem; }
+    .ticket-stop i { display: block; width: 20px; height: 20px; margin: 0 auto 9px; border: 5px solid var(--night); border-radius: 50%; background: #65d0c0; box-shadow: 0 0 0 2px rgba(255,255,255,.75); }
+    .ticket-stop:nth-child(1) i, .ticket-stop:nth-child(7) i { background: #dce8e5; }
+    .ticket-stop:nth-child(3) i { background: var(--sun); }
+    .ticket-stop:nth-child(5) i { background: var(--sandstone); }
+    .ticket-stop:nth-child(6) i { background: var(--sun); }
+
+    .sticky-nav { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--line); background: rgba(243,246,240,.94); backdrop-filter: blur(12px); }
+    .sticky-nav .container { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+    .sticky-nav a { flex: 0 0 auto; min-height: 52px; display: inline-flex; align-items: center; padding: 0 12px; border-bottom: 3px solid transparent; text-decoration: none; font-size: .86rem; font-weight: 800; }
+    .sticky-nav a:hover { border-color: var(--lake); color: var(--lake); }
+
+    main { padding: 44px 0 80px; }
+    section { scroll-margin-top: 74px; margin-bottom: 72px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+    .section-head h2 { margin-bottom: 0; }
+    .section-note { max-width: 520px; margin-bottom: 0; color: var(--muted); }
+
+    .panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .overview-grid { display: grid; gap: 20px; }
+    .map-panel { overflow: hidden; }
+    .map-top { padding: 20px 20px 0; }
+    .map-wrap { position: relative; min-height: 380px; padding: 10px; background: #dfece7; }
+    .map-wrap svg { width: 100%; min-height: 360px; }
+    .map-land { fill: #eef4ef; stroke: #b8cbc2; stroke-width: 1.4; }
+    .map-river { fill: none; stroke: #75b7c8; stroke-width: 7; opacity: .45; }
+    .map-route { fill: none; stroke: var(--night); stroke-width: 3; stroke-dasharray: 7 7; }
+    .city-node { cursor: pointer; }
+    .city-node .hit { fill: transparent; stroke: transparent; }
+    .city-node circle:not(.hit) { fill: var(--surface); stroke: var(--night); stroke-width: 3; transition: fill .2s ease, transform .2s ease; transform-origin: center; }
+    .city-node text { fill: var(--ink); font-family: var(--sans); font-size: 15px; font-weight: 800; }
+    .city-node:hover circle:not(.hit), .city-node:focus circle:not(.hit), .city-node.is-active circle:not(.hit) { fill: var(--sun); transform: scale(1.12); }
+    .city-node[data-city="jiuzhai"] circle:not(.hit) { stroke: var(--lake); }
+    .city-node[data-city="leshan"] circle:not(.hit) { stroke: var(--sandstone); }
+    .city-node[data-city="chongqing"] circle:not(.hit) { stroke: var(--sun); }
+    .map-detail { min-height: 152px; padding: 18px 20px 20px; border-top: 1px solid var(--line); }
+    .map-detail h3 { margin-bottom: 6px; }
+    .map-detail p { margin-bottom: 10px; color: var(--muted); }
+    .map-detail-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .booking-stack { display: grid; gap: 12px; padding: 18px; }
+    .booking-card { position: relative; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .booking-card.is-risk { border: 2px solid var(--danger); }
+    .booking-card .topline { display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-bottom: 7px; }
+    .booking-card strong { font-size: 1rem; }
+    .booking-card p { margin-bottom: 0; color: var(--muted); font-size: .86rem; }
+    .booking-time { font-family: var(--mono); font-weight: 800; }
+
+    .day-controls { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding: 3px 3px 8px; scrollbar-width: thin; }
+    .day-tab {
+      min-width: 120px; min-height: 64px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 14px;
+      background: var(--surface); color: var(--muted); text-align: left; cursor: pointer;
+      transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .day-tab:hover { border-color: var(--lake); }
+    .day-tab[aria-selected="true"] { background: var(--night); border-color: var(--night); color: #fff; }
+    .day-tab strong { display: block; color: inherit; font-family: var(--mono); font-size: .9rem; }
+    .day-tab span { font-size: .76rem; }
+    .day-panel { display: none; }
+    .day-panel.is-active { display: block; animation: enter .24s ease-out; }
+    @keyframes enter { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+
+    .day-banner { overflow: hidden; display: grid; min-height: 200px; margin-bottom: 18px; border-radius: var(--radius); background: var(--night); color: #fff; }
+    .day-copy { padding: 22px; }
+    .day-kicker { color: #9de3d8; font-size: .78rem; font-weight: 800; letter-spacing: .1em; }
+    .day-copy h3 { margin: 4px 0 8px; font-family: var(--display); font-size: clamp(1.85rem, 5vw, 3.3rem); }
+    .day-copy p { max-width: 610px; margin-bottom: 14px; color: #d7e3df; }
+    .day-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .day-meta .tag { color: #fff; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.28); }
+    .day-scene { min-height: 180px; background: #0d6973; }
+    .day-scene svg { width: 100%; height: 100%; min-height: 180px; }
+
+    .day-layout { display: grid; gap: 18px; }
+    .timeline { position: relative; padding: 6px 0 6px 22px; }
+    .timeline::before { content: ""; position: absolute; left: 9px; top: 20px; bottom: 20px; width: 2px; background: var(--line); }
+    .event { position: relative; display: grid; gap: 10px; margin-bottom: 12px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .event::before { content: ""; position: absolute; left: -20px; top: 22px; width: 11px; height: 11px; border: 3px solid var(--paper); border-radius: 50%; background: var(--lake); box-shadow: 0 0 0 1px var(--lake); }
+    .event.transport::before { background: var(--night); box-shadow: 0 0 0 1px var(--night); }
+    .event.food::before { background: var(--sandstone); box-shadow: 0 0 0 1px var(--sandstone); }
+    .event.alert { border-color: #d39b98; background: #fff8f7; }
+    .event.alert::before { background: var(--danger); box-shadow: 0 0 0 1px var(--danger); }
+    .event-time { font-family: var(--mono); font-weight: 900; color: var(--lake); }
+    .event.alert .event-time { color: var(--danger); }
+    .event h3 { margin: 0 0 4px; }
+    .event p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .event-detail { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; }
+    .event-detail span { padding: 3px 8px; border-radius: 7px; background: var(--surface-2); color: #374941; font-size: .75rem; font-weight: 700; }
+    .event-detail span.must { background: #f5dedc; color: #74211e; }
+
+    .side-stack { display: grid; align-content: start; gap: 12px; }
+    .side-card { padding: 17px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .side-card h3 { margin-bottom: 8px; }
+    .side-card p:last-child, .side-card ul:last-child { margin-bottom: 0; }
+    .side-card ul { padding-left: 20px; color: var(--muted); font-size: .9rem; }
+    .side-card li + li { margin-top: 6px; }
+    details.side-card { padding: 0; }
+    details.side-card summary { min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; cursor: pointer; font-weight: 800; }
+    details.side-card summary::after { content: "+"; font-family: var(--mono); font-size: 1.25rem; }
+    details.side-card[open] summary::after { content: "−"; }
+    details.side-card .details-inner { padding: 0 16px 16px; color: var(--muted); font-size: .9rem; }
+
+    .decision-grid { display: grid; gap: 12px; }
+    .decision-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .decision-art { height: 128px; background: var(--surface-2); }
+    .decision-art svg { width: 100%; height: 100%; }
+    .decision-copy { padding: 16px; }
+    .decision-title { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+    .decision-title h3 { margin-bottom: 5px; }
+    .score { flex: 0 0 auto; font-family: var(--mono); color: var(--lake); font-weight: 900; }
+    .decision-card p { margin-bottom: 10px; color: var(--muted); font-size: .88rem; }
+
+    .checklist-grid, .risk-grid, .pack-grid { display: grid; gap: 14px; }
+    .checklist-card { padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .checklist-card h3 { margin-bottom: 12px; }
+    .check-row { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; padding: 11px 0; border-top: 1px solid var(--line); cursor: pointer; }
+    .check-row:first-of-type { border-top: 0; }
+    .check-row input { width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--lake); }
+    .check-row strong { display: block; }
+    .check-row span { display: block; color: var(--muted); font-size: .84rem; }
+    .progress-wrap { margin-top: 12px; }
+    .progress-label { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: .82rem; font-weight: 800; }
+    .progress-bar { height: 10px; overflow: hidden; border-radius: 999px; background: var(--surface-2); }
+    .progress-bar i { display: block; width: 0; height: 100%; background: var(--lake); transition: width .25s ease; }
+
+    .risk-card { padding: 18px; border: 1px solid var(--line); border-left: 5px solid var(--sun); border-radius: 14px; background: var(--surface); }
+    .risk-card.high { border-left-color: var(--danger); }
+    .risk-card h3 { margin-bottom: 7px; }
+    .risk-card p { margin-bottom: 0; color: var(--muted); font-size: .9rem; }
+    .risk-card .risk-level { display: block; margin-bottom: 6px; color: var(--danger); font-size: .76rem; font-weight: 900; letter-spacing: .08em; }
+
+    .pack-card { padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .pack-card h3 { margin-bottom: 8px; }
+    .pack-card ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: .9rem; }
+    .pack-card li + li { margin-top: 5px; }
+
+    .source-list { display: grid; gap: 8px; }
+    .source-link { min-height: 52px; display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); text-decoration: none; }
+    .source-link:hover { border-color: var(--lake); }
+    .source-link small { display: block; color: var(--muted); }
+    .source-link .arrow { font-family: var(--mono); color: var(--lake); font-weight: 900; }
+    .asof { margin-top: 14px; color: var(--muted); font-size: .82rem; }
+
+    .footer { padding: 30px 0 50px; color: #d2dfdb; background: var(--night); }
+    .footer-grid { display: flex; flex-wrap: wrap; align-items: start; justify-content: space-between; gap: 24px; }
+    .footer strong { color: #fff; }
+    .footer p { max-width: 680px; margin-bottom: 0; }
+    .toast { position: fixed; left: 50%; bottom: 24px; z-index: 1000; padding: 10px 15px; border-radius: 10px; background: var(--ink); color: #fff; opacity: 0; pointer-events: none; transform: translate(-50%, 12px); transition: opacity .2s ease, transform .2s ease; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    .compact-mode .side-stack, .compact-mode #choices, .compact-mode #packing, .compact-mode .source-list { display: none; }
+    .compact-mode .day-layout { grid-template-columns: 1fr; }
+
+    @media (min-width: 720px) {
+      .hero { padding: 56px 0 42px; }
+      .hero-grid { grid-template-columns: minmax(0, 1.65fr) minmax(300px, .8fr); align-items: end; }
+      .route-ticket { grid-column: 1 / -1; }
+      .overview-grid { grid-template-columns: minmax(0, 1.45fr) minmax(280px, .75fr); }
+      .day-banner { grid-template-columns: 1.35fr .65fr; }
+      .day-layout { grid-template-columns: minmax(0, 1.65fr) minmax(260px, .7fr); }
+      .event { grid-template-columns: 112px 1fr; }
+      .event .event-time { padding-top: 2px; }
+      .decision-grid { grid-template-columns: repeat(2, 1fr); }
+      .checklist-grid { grid-template-columns: repeat(2, 1fr); }
+      .risk-grid { grid-template-columns: repeat(2, 1fr); }
+      .pack-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1040px) {
+      .decision-grid { grid-template-columns: repeat(4, 1fr); }
+      .risk-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .hero-stats { grid-template-columns: 1fr; }
+      .hero-stat { min-height: auto; }
+      .ticket-stop { font-size: .62rem; }
+      .section-head { display: block; }
+      .section-note { margin-top: 10px; }
+      .map-wrap { min-height: 300px; }
+      .map-wrap svg { min-height: 280px; }
+      .day-copy { padding: 18px; }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #101916;
+        --surface: #17231f;
+        --surface-2: #21322c;
+        --ink: #edf5f1;
+        --muted: #a9bbb3;
+        --line: #344a40;
+        --night: #12263f;
+      }
+      .sticky-nav { background: rgba(16,25,22,.94); }
+      .map-wrap { background: #172c28; }
+      .map-land { fill: #21352f; stroke: #48645a; }
+      .map-detail p, .event p, .side-card ul, .decision-card p, .risk-card p, .pack-card ul { color: var(--muted); }
+      .event.alert { background: #2d1a19; border-color: #74413d; }
+      .event-detail span { color: #d7e6df; }
+      .event-detail span.must { background: #552724; color: #ffd8d3; }
+      .tag.alt { color: #dce9f7; background: #21364e; border-color: #48627d; }
+    }
+
+    /* 2026 travel-sketchbook theme — original code-native artwork */
+    :root {
+      color-scheme: light;
+      --paper: #d5d6ca;
+      --surface: #fbf2e5;
+      --surface-2: #e7e3d8;
+      --ink: #4b3b36;
+      --muted: #746962;
+      --line: #c6bcac;
+      --lake: #6c3b39;
+      --lake-2: #aeb9a3;
+      --sandstone: #a8654a;
+      --sun: #d2ae69;
+      --night: #6c3b39;
+      --danger: #913f3a;
+      --success: #62765e;
+      --focus: #1768a7;
+      --radius: 24px 20px 26px 18px;
+      --radius-sm: 13px 10px 15px 11px;
+      --content: 1120px;
+      --display: "STKaiti", "KaiTi", "Kaiti SC", "Noto Serif SC", serif;
+    }
+
+    html { background: #cfd1c5; }
+    body {
+      padding-bottom: 0;
+      background-color: var(--paper);
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,.24) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 70% 40%, rgba(90,72,59,.055) 0 1px, transparent 1.5px),
+        linear-gradient(100deg, rgba(255,255,255,.12), transparent 38%, rgba(98,118,94,.05));
+      background-size: 19px 19px, 23px 23px, auto;
+      color: var(--ink);
+      letter-spacing: .01em;
+    }
+    h2, h3 { font-family: var(--display); font-weight: 700; }
+    h2 { color: var(--lake); letter-spacing: .04em; }
+    .container { width: min(calc(100% - 28px), var(--content)); }
+    .eyebrow {
+      color: var(--lake); font-family: var(--display); font-size: .86rem;
+      font-weight: 700; letter-spacing: .14em; text-transform: none;
+    }
+    .tag {
+      border: 1.5px dashed var(--line); border-radius: 13px 17px 12px 16px;
+      color: var(--muted); background: rgba(255,250,240,.66);
+    }
+    .tag.urgent, .tag.good { color: #fffaf2; }
+    .tag.alt { color: #4e5b50; background: #e1e7de; border-color: #a8b4a4; }
+
+    .hero {
+      overflow: hidden; padding: 44px 0 34px; color: var(--ink);
+      background: #f8efe2; border-bottom: 1.5px solid rgba(108,59,57,.28);
+    }
+    .hero::before {
+      opacity: .72;
+      background:
+        radial-gradient(ellipse at 85% 15%, rgba(213,180,129,.16), transparent 34%),
+        repeating-linear-gradient(4deg, rgba(108,59,57,.022) 0 1px, transparent 1px 7px),
+        repeating-linear-gradient(93deg, rgba(90,76,65,.018) 0 1px, transparent 1px 9px);
+    }
+    .hero-grid { gap: 24px; align-items: center; }
+    .hero .eyebrow { color: var(--lake); }
+    .hero h1 {
+      max-width: 650px; margin-bottom: 14px; color: var(--lake);
+      font-family: var(--display); font-size: clamp(3.1rem, 8vw, 5.8rem);
+      font-weight: 700; line-height: .92; letter-spacing: .08em;
+    }
+    .hero h1 span { color: var(--lake); }
+    .hero-lead { max-width: 660px; margin-bottom: 20px; color: var(--muted); }
+    .hero-actions { gap: 11px; }
+    .btn {
+      border: 1.5px solid var(--lake); border-radius: 15px 11px 17px 12px;
+      background: var(--lake); color: #fff8ee; box-shadow: 3px 4px 0 rgba(94,71,60,.14);
+    }
+    .btn:hover { background: #7c4845; transform: translate(-1px,-1px); box-shadow: 4px 5px 0 rgba(94,71,60,.18); }
+    .btn.secondary { color: var(--lake); background: rgba(255,248,238,.5); border-color: var(--lake); }
+    .btn.secondary:hover { color: var(--lake); background: #fff8ee; border-color: var(--lake); }
+    .hero-sketch {
+      align-self: stretch; min-height: 280px; overflow: hidden;
+      border: 1.5px solid rgba(108,59,57,.22); border-radius: 27px 19px 31px 18px;
+      background: rgba(255,250,241,.52); transform: rotate(.35deg);
+    }
+    .hero-sketch svg { width: 100%; height: 100%; min-height: 280px; }
+    .hero-sketch .wash { stroke: none; }
+    .hero-sketch .wash-back { fill: rgba(173,191,153,.35); }
+    .hero-sketch .wash-front { fill: rgba(193,205,174,.48); }
+    .hero-sketch .sketch-line,
+    .hero-sketch .traveler { fill: none; stroke: #6c5b50; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+    .hero-sketch .river-echo { stroke: #91bcc5; stroke-width: 13; opacity: .62; }
+    .hero-sketch .traveler circle { fill: #fbf2e5; }
+    .hero-sketch .star { fill: rgba(185,122,79,.14); stroke: #7c4a3c; stroke-width: 3; stroke-linejoin: round; }
+    .hero-sketch .sketch-word { fill: #5d4d46; font-family: var(--display); font-size: 49px; font-weight: 700; letter-spacing: 4px; }
+    .hero-stats {
+      gap: 10px; overflow: visible; border: 0; border-radius: 0; background: transparent;
+    }
+    .hero-stat {
+      min-height: 92px; padding: 15px 16px; color: var(--ink);
+      border: 1.5px solid var(--line); border-radius: 18px 14px 20px 15px;
+      background: rgba(251,242,229,.84); box-shadow: 3px 4px 0 rgba(92,76,63,.08);
+    }
+    .hero-stat:nth-child(2) { transform: rotate(-.45deg); }
+    .hero-stat strong { color: var(--lake); font-size: 1.17rem; }
+    .hero-stat span { color: var(--muted); }
+    .route-ticket {
+      margin-top: 0; padding: 20px 18px 17px; border: 1.5px dashed #ae9e89;
+      border-radius: 20px 14px 22px 17px; background: rgba(251,242,229,.72);
+    }
+    .route-ticket::before, .route-ticket::after { background: #f8efe2; }
+    .ticket-line::before { height: 2px; background: repeating-linear-gradient(90deg, #7d8d77 0 9px, transparent 9px 15px); }
+    .ticket-stop { color: var(--muted); font-family: var(--display); font-size: .78rem; }
+    .ticket-stop i {
+      width: 19px; height: 19px; border: 4px solid #f8efe2; background: #aeb9a3;
+      box-shadow: 0 0 0 1.5px var(--lake);
+    }
+    .ticket-stop:nth-child(1) i, .ticket-stop:nth-child(7) i { background: #f4d9ce; }
+    .ticket-stop:nth-child(3) i { background: #d8c792; }
+    .ticket-stop:nth-child(5) i { background: #dca98e; }
+    .ticket-stop:nth-child(6) i { background: #d8c792; }
+
+    .danger-strip { padding: 15px 0 18px; color: var(--ink); background: transparent; }
+    .danger-strip .container {
+      position: relative; padding: 15px 18px; border: 1.5px dashed #b99a73;
+      border-radius: 10px 19px 13px 17px; background: #f3dfbc;
+      box-shadow: 3px 4px 0 rgba(100,79,54,.09); transform: rotate(-.12deg);
+    }
+    .danger-strip .container::before {
+      content: ""; position: absolute; top: -8px; left: 50%; width: 68px; height: 16px;
+      background: rgba(220,201,167,.72); transform: translateX(-50%) rotate(1.5deg);
+    }
+
+    .sticky-nav { border: 0; background: rgba(213,214,202,.9); backdrop-filter: blur(14px); }
+    .sticky-nav .container { justify-content: center; gap: 14px; }
+    .sticky-nav a {
+      min-height: 58px; gap: 7px; padding: 0 14px; border: 0; color: var(--muted);
+      font-family: var(--display); font-size: .92rem; letter-spacing: .06em;
+    }
+    .sticky-nav a .icon { width: 19px; height: 19px; }
+    .sticky-nav a:hover { color: var(--lake); border-color: transparent; transform: translateY(-1px); }
+
+    main { padding: 48px 0 92px; }
+    section { scroll-margin-top: 82px; margin-bottom: 76px; }
+    .section-head { position: relative; align-items: end; margin-bottom: 25px; }
+    .section-head h2 { position: relative; display: inline-block; }
+    .section-head h2::after {
+      content: ""; position: absolute; left: 4%; right: -3%; bottom: -8px; height: 8px;
+      border-top: 2px solid rgba(108,59,57,.42); border-radius: 50%; transform: rotate(-.7deg);
+    }
+    .section-note { color: var(--muted); font-size: .92rem; }
+    .panel, .booking-card, .event, .side-card, .decision-card, .checklist-card, .risk-card, .pack-card, .source-link {
+      border: 1.5px solid rgba(152,133,115,.45); background: rgba(251,242,229,.94);
+      box-shadow: 3px 5px 0 rgba(91,77,65,.065);
+    }
+    .panel { border-radius: 28px 19px 25px 17px; }
+    .map-panel { transform: rotate(-.12deg); }
+    .map-top { padding: 21px 22px 2px; }
+    .map-wrap {
+      min-height: 380px; margin: 10px 14px; border-radius: 22px 15px 25px 18px;
+      background: #dce0d3;
+      background-image: linear-gradient(111deg, rgba(255,255,255,.2), transparent 56%);
+    }
+    .map-land { fill: #f3ebdc; stroke: #a8a98f; stroke-width: 1.7; }
+    .map-river { stroke: #8fbcc6; stroke-width: 9; opacity: .52; }
+    .map-route { stroke: var(--lake); stroke-width: 2.7; stroke-dasharray: 8 8; }
+    .city-node circle:not(.hit) { fill: #fbf2e5; stroke: var(--lake); stroke-width: 2.5; }
+    .city-node text { fill: var(--ink); font-family: var(--display); font-size: 17px; }
+    .city-node:hover circle:not(.hit), .city-node:focus circle:not(.hit), .city-node.is-active circle:not(.hit) { fill: #e1cba3; }
+    .map-detail { border-top: 1.5px dashed var(--line); }
+    .booking-stack { padding: 16px; }
+    .booking-card { border-radius: 18px 13px 20px 14px; box-shadow: none; }
+    .booking-card:nth-child(even) { transform: rotate(.18deg); }
+    .booking-card.is-risk { border: 2px dashed var(--danger); background: #fff0e8; }
+
+    .day-controls { gap: 10px; padding: 5px 3px 13px; scrollbar-color: #a79a86 transparent; }
+    .day-tab {
+      min-width: 118px; min-height: 70px; padding: 10px 13px; border: 1.5px solid var(--line);
+      border-radius: 17px 13px 19px 12px; background: rgba(251,242,229,.86); color: var(--muted);
+      box-shadow: 2px 3px 0 rgba(91,77,65,.06);
+    }
+    .day-tab:nth-child(3n+2) { transform: rotate(-.4deg); }
+    .day-tab:hover { border-color: var(--lake); color: var(--lake); }
+    .day-tab[aria-selected="true"] {
+      color: #fff9ef; border-color: var(--lake); background: var(--lake);
+      transform: rotate(.4deg) translateY(-2px); box-shadow: 3px 5px 0 rgba(91,55,51,.15);
+    }
+    .day-tab strong { font-size: .86rem; }
+    .day-tab span { font-family: var(--display); font-size: .84rem; }
+    .day-banner {
+      position: relative; min-height: 218px; margin-bottom: 22px; overflow: hidden;
+      border: 1.5px solid rgba(152,133,115,.5); border-radius: 27px 19px 25px 17px;
+      color: var(--ink); background: rgba(251,242,229,.95); box-shadow: 4px 6px 0 rgba(91,77,65,.07);
+    }
+    .day-banner::after {
+      content: ""; position: absolute; left: 28px; bottom: 17px; width: 72px; height: 7px;
+      border-top: 2px solid rgba(108,59,57,.42); border-radius: 50%; transform: rotate(-2deg);
+    }
+    .day-copy { position: relative; z-index: 2; padding: 24px; }
+    .day-kicker { color: var(--lake); font-family: var(--display); font-size: .85rem; letter-spacing: .11em; }
+    .day-copy h3 { color: var(--lake); font-size: clamp(1.75rem, 4.6vw, 3rem); letter-spacing: .04em; }
+    .day-copy p { color: var(--muted); }
+    .day-meta .tag { color: var(--muted); background: rgba(255,249,239,.65); border-color: var(--line); }
+    .day-scene { min-height: 200px; background: #d8d9cc; }
+    .day-scene svg { min-height: 200px; opacity: .78; filter: saturate(.55) sepia(.1); }
+    .timeline { padding-left: 25px; }
+    .timeline::before {
+      left: 9px; width: 2px; background: repeating-linear-gradient(to bottom, var(--lake) 0 6px, transparent 6px 12px); opacity: .58;
+    }
+    .event {
+      margin-bottom: 14px; padding: 16px 17px; border-radius: 18px 13px 20px 14px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .event:nth-child(even) { border-radius: 14px 19px 13px 21px; }
+    .event:hover { transform: translateY(-2px); border-color: rgba(108,59,57,.5); box-shadow: 4px 7px 0 rgba(91,77,65,.085); }
+    .event::before { left: -22px; border-color: var(--paper); background: #91a188; box-shadow: 0 0 0 1.5px var(--lake); }
+    .event.transport::before { background: #88aab0; box-shadow: 0 0 0 1.5px var(--lake); }
+    .event.food::before { background: #c78b69; box-shadow: 0 0 0 1.5px var(--lake); }
+    .event.alert { border: 1.5px dashed #b87369; background: #fff0e8; }
+    .event-time { color: var(--lake); font-size: .9rem; }
+    .event h3 { color: var(--ink); font-family: var(--sans); font-size: 1.02rem; }
+    .event p { color: var(--muted); }
+    .event-detail span { border-radius: 9px 7px 10px 8px; background: #e5e5d9; color: #4f5c52; }
+    .event-detail span.must { background: #f1d7ce; color: #742f2c; }
+    .side-stack { gap: 14px; }
+    .side-card { border-radius: 18px 12px 20px 15px; }
+    .side-card:nth-child(even) { transform: rotate(.18deg); }
+    details.side-card summary::after { color: var(--lake); }
+
+    .decision-grid, .checklist-grid, .risk-grid, .pack-grid { gap: 16px; }
+    .decision-card { border-radius: 23px 15px 25px 17px; }
+    .decision-card:nth-child(even) { transform: rotate(.2deg); }
+    .decision-art { height: 134px; background: #dedfd3; }
+    .decision-art svg { opacity: .78; filter: saturate(.55) sepia(.08); }
+    .decision-copy { padding: 17px; }
+    .score { color: var(--lake); }
+    .checklist-card, .pack-card { border-radius: 21px 15px 24px 17px; }
+    .check-row { border-top: 1.5px dashed var(--line); }
+    .check-row input { accent-color: var(--lake); }
+    .progress-bar { background: #deded2; }
+    .progress-bar i { background: var(--lake); }
+    .risk-card { border: 1.5px solid rgba(152,133,115,.45); border-left: 5px solid var(--sun); border-radius: 18px 13px 20px 14px; }
+    .risk-card.high { border-left-color: var(--danger); }
+    .source-link { border-radius: 16px 12px 18px 13px; }
+    .source-link:hover { border-color: var(--lake); transform: translateX(2px); }
+    .source-link .arrow { color: var(--lake); }
+    .footer { padding: 38px 0 112px; color: var(--muted); background: #c9cbbf; border-top: 1.5px dashed #a59c8d; }
+    .footer strong { color: var(--lake); font-family: var(--display); font-size: 1.12rem; }
+    .toast { bottom: 92px; border: 1.5px solid #fff1e2; border-radius: 15px 11px 17px 12px; background: var(--lake); }
+
+    @media (min-width: 720px) {
+      .hero-grid { grid-template-columns: minmax(0, .88fr) minmax(420px, 1.12fr); align-items: center; }
+      .hero-sketch { grid-column: 2; grid-row: 1; }
+      .hero-stats { grid-column: 1 / -1; }
+      .route-ticket { grid-column: 1 / -1; }
+      .day-banner { grid-template-columns: 1.25fr .75fr; }
+      .footer { padding-bottom: 52px; }
+    }
+    @media (max-width: 719px) {
+      body { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+      .container { width: min(calc(100% - 24px), var(--content)); }
+      .hero { padding: 28px 0 25px; }
+      .hero-grid { gap: 18px; }
+      .hero h1 { font-size: clamp(3rem, 18vw, 4.6rem); }
+      .hero-lead { font-size: .94rem; }
+      .hero-actions .btn { flex: 1 1 calc(50% - 6px); padding-inline: 11px; font-size: .86rem; }
+      .hero-actions .btn:first-child { flex-basis: 100%; }
+      .hero-sketch { min-height: 210px; }
+      .hero-sketch svg { min-height: 210px; }
+      .hero-stats { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 7px; }
+      .hero-stat { min-height: 92px; padding: 12px 9px; }
+      .hero-stat strong { font-size: .85rem; }
+      .hero-stat span { font-size: .68rem; line-height: 1.45; }
+      .route-ticket { padding-inline: 8px; }
+      .ticket-stop { font-size: .64rem; }
+      .danger-strip .container { padding: 14px 15px; font-size: .88rem; }
+      .sticky-nav {
+        position: fixed; top: auto; left: 10px; right: 10px; bottom: max(10px, env(safe-area-inset-bottom, 0px)); z-index: 200;
+        border: 1.5px solid rgba(152,133,115,.45);
+        border-radius: 24px 18px 25px 17px; background: rgba(251,242,229,.94);
+        box-shadow: 0 8px 28px rgba(70,59,50,.18); backdrop-filter: blur(18px);
+      }
+      .sticky-nav .container { width: 100%; justify-content: space-around; gap: 0; padding: 4px 6px; overflow: visible; }
+      .sticky-nav a {
+        flex: 1 1 20%; min-width: 0; min-height: 60px; flex-direction: column; justify-content: center;
+        gap: 2px; padding: 4px 1px; font-size: .72rem; line-height: 1.1;
+      }
+      .sticky-nav a .icon { width: 23px; height: 23px; }
+      main { padding-top: 38px; }
+      section { scroll-margin-top: 18px; margin-bottom: 62px; }
+      .section-head { display: block; }
+      .section-note { margin-top: 15px; }
+      .map-wrap { margin-inline: 9px; }
+      .booking-stack { padding: 11px; }
+      .day-controls { margin-inline: -12px; padding-inline: 12px; }
+      .day-tab { min-width: 108px; }
+      .day-banner { min-height: 0; }
+      .day-copy { padding: 20px 18px 24px; }
+      .day-scene { min-height: 145px; }
+      .day-scene svg { min-height: 145px; }
+      .timeline { padding-left: 20px; }
+      .event::before { left: -18px; }
+      .footer { padding-bottom: 30px; }
+    }
+    @media (max-width: 390px) {
+      .hero-actions .btn { flex-basis: 100%; }
+      .hero-sketch { min-height: 190px; }
+      .hero-sketch svg { min-height: 190px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hero-stat:last-child { grid-column: 1 / -1; min-height: 72px; }
+      .ticket-stop { font-size: .58rem; }
+      .sticky-nav { left: 7px; right: 7px; bottom: max(7px, env(safe-area-inset-bottom, 0px)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media print {
+      :root { --paper: #fff; --surface: #fff; --ink: #000; --muted: #333; --line: #bbb; }
+      .hero { padding: 24px 0; color: #000; background: #fff; border-bottom: 3px solid #000; }
+      .hero::before, .hero-actions, .sticky-nav, .danger-strip, .day-controls, .toast { display: none !important; }
+      .hero h1, .hero h1 span, .hero .eyebrow, .hero-lead, .hero-stat strong, .hero-stat span { color: #000; }
+      .hero-grid { display: block; }
+      .hero-stats { grid-template-columns: repeat(3,1fr); border-color: #aaa; }
+      .hero-stat { min-height: auto; color: #000; background: #fff; }
+      .route-ticket { color: #000; border-color: #aaa; background: #fff; }
+      .route-ticket::before, .route-ticket::after { display: none; }
+      .ticket-stop { color: #000; }
+      .day-panel { display: block !important; break-before: page; }
+      .day-banner { color: #000; background: #fff; border: 1px solid #aaa; }
+      .day-copy p, .day-kicker { color: #222; }
+      .day-meta .tag { color: #000; border-color: #aaa; background: #fff; }
+      .day-scene { display: none; }
+      .day-layout { grid-template-columns: 1fr; }
+      .event, .side-card, .panel, .decision-card, .checklist-card, .risk-card, .pack-card { break-inside: avoid; }
+      main { padding-top: 28px; }
+      section { margin-bottom: 38px; }
+      .footer { color: #000; background: #fff; border-top: 1px solid #000; }
+      .footer strong { color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到每日行程</a>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">
+          <svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>
+          已锁定车次与酒店 · 2人非自驾
+        </div>
+        <h1>川·渝<br><span>八日行</span></h1>
+        <p class="hero-lead">2026 年 8 月 10—17 日，先在成都看熊猫、喝盖碗茶，再从黄龙彩池走到九寨海子与三江大佛，最后进入山城夜色。主线按已付款订单倒推，重点守住三次早起和一次 30 分钟换乘。</p>
+        <div class="hero-actions">
+          <a class="btn" href="#days">
+            <svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+            查看每日时间表
+          </a>
+          <button class="btn secondary" id="printBtn" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#icon-print"></use></svg>
+            打印 / 保存 PDF
+          </button>
+          <button class="btn secondary" id="compactBtn" type="button" aria-pressed="false">
+            <svg class="icon" aria-hidden="true"><use href="#icon-focus"></use></svg>
+            只看主线
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-sketch" aria-hidden="true">
+        <svg viewBox="0 0 720 390" role="img">
+          <title>群山、河流与旅行者手绘插画</title>
+          <path class="wash wash-back" d="M8 238 116 92l73 91 81-122 88 119 91-105 100 116 72-93 91 140v118H8Z"/>
+          <path class="wash wash-front" d="M-8 286 102 139l78 95 78-110 93 127 76-94 91 99 79-117 123 154v77H-8Z"/>
+          <g class="sketch-line">
+            <path d="M6 259 116 92l73 91 81-122 88 119 91-105 100 116 72-93 94 145"/>
+            <path d="M-5 291 102 139l78 95 78-110 93 127 76-94 91 99 79-117 121 151"/>
+            <path d="m84 189 31-46 20 28 19-21 34 46m51-78 29-41 22 35 17-19 31 51m103 49 26-31 27 35 20-20 31 48"/>
+            <path d="M213 378c51-34 91-52 127-63 49-15 96-16 136-44 39-27 55-55 74-74-8 35-27 70-65 99-37 28-82 41-133 55-34 9-62 18-91 34"/>
+            <path class="river-echo" d="M250 384c46-29 79-43 117-54 48-14 89-27 126-55"/>
+            <path d="M164 261v-39m-11 19 11-26 12 26m-28 12 16-24 17 24M558 265v-42m-13 20 13-28 13 28m-25 13 12-24 15 24"/>
+          </g>
+          <g class="traveler" transform="translate(286 217)">
+            <path d="M26 27c0-13 9-23 22-23s22 10 22 23v17H26Z"/>
+            <path d="M16 25c12-15 42-22 64-7-20 3-43 5-64 7Z"/>
+            <circle cx="48" cy="33" r="20"/>
+            <path d="M42 32h1m12 0h1m-12 9c4 2 8 2 12-1M34 52l-9 24 10 8 7-14m22-18 9 25-10 7-6-14M35 52v45h27V52m-20 45-2 20m16-20 3 20"/>
+            <path d="M72 53 89 45v28L72 77m8-28v24"/>
+          </g>
+          <path class="star" d="m618 30 11 25 28-7-17 23 18 21-29-4-8 27-11-25-28 8 17-24-18-20 29 3Z"/>
+          <text x="36" y="53" class="sketch-word">Travel Planner</text>
+        </svg>
+      </div>
+
+      <div class="hero-stats" aria-label="行程摘要">
+        <div class="hero-stat"><strong>8天 / 7晚</strong><span>8月10日周一—17日周一</span></div>
+        <div class="hero-stat"><strong>2航班 / 4铁路</strong><span>另有 3 段川西北公路接驳</span></div>
+        <div class="hero-stat"><strong id="countdown">D−6</strong><span>页面按本机日期自动更新</span></div>
+      </div>
+
+      <div class="route-ticket" aria-label="旅行路线：长春、成都、黄龙、九寨沟、乐山、重庆、长春">
+        <div class="ticket-line">
+          <div class="ticket-stop"><i></i><span>长春</span></div>
+          <div class="ticket-stop"><i></i><span>成都东</span></div>
+          <div class="ticket-stop"><i></i><span>黄龙</span></div>
+          <div class="ticket-stop"><i></i><span>九寨沟</span></div>
+          <div class="ticket-stop"><i></i><span>乐山</span></div>
+          <div class="ticket-stop"><i></i><span>重庆</span></div>
+          <div class="ticket-stop"><i></i><span>长春</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="danger-strip" role="note">
+    <div class="container">
+      <svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>
+      <span>8月14日是全程唯一“硬时限日”：05:45 左右离开九寨沟酒店；成都东仅 30 分钟同站换乘，不要出站。</span>
+    </div>
+  </div>
+
+  <nav class="sticky-nav" aria-label="页面导航">
+    <div class="container">
+      <a href="#overview"><svg class="icon" aria-hidden="true"><use href="#icon-home"></use></svg><span>总览</span></a>
+      <a href="#days"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>每日</span></a>
+      <a href="#todo"><svg class="icon" aria-hidden="true"><use href="#icon-checklist"></use></svg><span>清单</span></a>
+      <a href="#risks"><svg class="icon" aria-hidden="true"><use href="#icon-signpost"></use></svg><span>提醒</span></a>
+      <a href="#packing"><svg class="icon" aria-hidden="true"><use href="#icon-bag"></use></svg><span>行李</span></a>
+    </div>
+  </nav>
+
+  <main id="main" class="container">
+    <section id="overview">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Route / 位置关系</div>
+          <h2>先看清路线，再决定每天体力怎么花</h2>
+        </div>
+        <p class="section-note">成都在四川盆地西缘；黄龙位于九寨沟东南方向，是 8/12 高铁到站后的顺路节点；乐山在成都以南，重庆在更东侧。点击地图节点可跳到对应日程。</p>
+      </div>
+
+      <div class="overview-grid">
+        <article class="panel map-panel">
+          <div class="map-top">
+            <div class="eyebrow">交互地图 · 点击城市</div>
+          </div>
+          <div class="map-wrap">
+            <svg viewBox="0 0 690 390" role="img" aria-labelledby="mapTitle mapDesc">
+              <title id="mapTitle">成都、黄龙、九寨沟、乐山与重庆位置关系图</title>
+              <desc id="mapDesc">简化地图显示从成都向北先到黄龙再到九寨沟，乐山位于成都南方，重庆位于成都东侧。</desc>
+              <path class="map-land" d="M72,50 C150,12 264,28 320,70 C386,24 518,34 614,94 C676,133 661,226 622,286 C583,348 452,354 354,327 C282,366 159,339 98,289 C39,240 21,128 72,50Z"></path>
+              <path class="map-river" d="M115,272 C217,244 265,251 339,232 C430,209 480,173 618,190"></path>
+              <path class="map-route" d="M272,205 L285,140 L226,104 M272,205 L260,282 M272,205 C365,197 438,202 515,214"></path>
+              <text x="40" y="370" fill="var(--muted)" font-size="12">中国西南 · 示意图（非比例尺）</text>
+              <g class="city-node" data-city="jiuzhai" role="button" tabindex="0" aria-label="查看九寨沟详情">
+                <circle class="hit" cx="226" cy="104" r="24"></circle>
+                <circle cx="226" cy="104" r="12"></circle><text x="244" y="110">九寨沟</text>
+              </g>
+              <g class="city-node" data-city="huanglong" role="button" tabindex="0" aria-label="查看黄龙详情">
+                <circle class="hit" cx="285" cy="140" r="24"></circle>
+                <circle cx="285" cy="140" r="10"></circle><text x="303" y="146">黄龙</text>
+              </g>
+              <g class="city-node is-active" data-city="chengdu" role="button" tabindex="0" aria-label="查看成都详情">
+                <circle class="hit" cx="272" cy="205" r="24"></circle>
+                <circle cx="272" cy="205" r="12"></circle><text x="290" y="211">成都</text>
+              </g>
+              <g class="city-node" data-city="leshan" role="button" tabindex="0" aria-label="查看乐山详情">
+                <circle class="hit" cx="260" cy="282" r="24"></circle>
+                <circle cx="260" cy="282" r="12"></circle><text x="278" y="288">乐山</text>
+              </g>
+              <g class="city-node" data-city="chongqing" role="button" tabindex="0" aria-label="查看重庆详情">
+                <circle class="hit" cx="515" cy="214" r="24"></circle>
+                <circle cx="515" cy="214" r="12"></circle><text x="533" y="220">重庆</text>
+              </g>
+            </svg>
+          </div>
+          <div class="map-detail" id="mapDetail" aria-live="polite">
+            <h3>成都 · 两晚一整日，先进入川味节奏</h3>
+            <p>8月10日晚抵达天府机场，入住春熙路—天府广场片区；8月11日安排熊猫基地、人民公园与春熙路，8月12日从成都东出发。</p>
+            <div class="map-detail-meta"><span class="tag">住宿2晚</span><span class="tag">8/11完整游览</span><span class="tag urgent">8/14仅30分钟换乘</span></div>
+          </div>
+        </article>
+
+        <aside class="panel booking-stack" aria-label="固定订单">
+          <div class="eyebrow">Locked / 已付款节点</div>
+          <article class="booking-card">
+            <div class="topline"><strong>8/10 · MU9812</strong><span class="tag good">已订</span></div>
+            <div class="booking-time">长春龙嘉 T2 15:55 → 成都天府 T2 20:35</div>
+            <p>落地后建议直接打车去市中心酒店。</p>
+          </article>
+          <article class="booking-card">
+            <div class="topline"><strong>8/10—12 · 成都2晚</strong><span class="tag good">已订</span></div>
+            <div class="booking-time">桔子酒店 · 春熙路天府广场店</div>
+            <p>青羊区顺城大街88号1栋1层。</p>
+          </article>
+          <article class="booking-card">
+            <div class="topline"><strong>8/12 · C6362</strong><span class="tag good">已订</span></div>
+            <div class="booking-time">成都东 08:12 → 黄龙九寨 10:07*</div>
+            <p>之后按“黄龙景区半日游 → 九寨沟酒店”联运。</p>
+          </article>
+          <article class="booking-card is-risk">
+            <div class="topline"><strong>8/14 · 两段铁路</strong><span class="tag urgent">紧衔接</span></div>
+            <div class="booking-time">09:04 → 10:45 / 11:15 → 12:01*</div>
+            <p>黄龙九寨—成都东—乐山；中间仅 30 分钟。</p>
+          </article>
+          <article class="booking-card">
+            <div class="topline"><strong>8/15 · G5415</strong><span class="tag good">已订</span></div>
+            <div class="booking-time">乐山 11:10 → 重庆西 13:00*</div>
+            <p>上午不安排远距离景点。</p>
+          </article>
+          <article class="booking-card">
+            <div class="topline"><strong>8/17 · CA4017</strong><span class="tag good">已订</span></div>
+            <div class="booking-time">重庆江北 T3 15:10 → 长春龙嘉 T2 18:25</div>
+            <p>建议 12:45 前到 T3，预留卫星厅捷运时间。</p>
+          </article>
+          <p class="muted" style="margin:0;font-size:.78rem">* 铁路到达时间按 2026-08-04 查询结果填写，出发前仍以 12306 当日信息为准。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="days">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Day by day / 逐日计划</div>
+          <h2>每天只守一个核心目标</h2>
+        </div>
+        <p class="section-note">默认按 2 位成人、体力中等、首次到访设计。步行量采用“景区接驳优先、关键段徒步”的控制方式。</p>
+      </div>
+
+      <div class="day-controls" role="tablist" aria-label="选择日期">
+        <button class="day-tab" id="tab-d1" role="tab" aria-selected="true" aria-controls="d1" data-day="d1"><strong>08/10 · D1</strong><span>长春 → 成都</span></button>
+        <button class="day-tab" id="tab-d2" role="tab" aria-selected="false" aria-controls="d2" data-day="d2"><strong>08/11 · D2</strong><span>成都整日</span></button>
+        <button class="day-tab" id="tab-d3" role="tab" aria-selected="false" aria-controls="d3" data-day="d3"><strong>08/12 · D3</strong><span>成都·黄龙·九寨</span></button>
+        <button class="day-tab" id="tab-d4" role="tab" aria-selected="false" aria-controls="d4" data-day="d4"><strong>08/13 · D4</strong><span>九寨沟整日</span></button>
+        <button class="day-tab" id="tab-d5" role="tab" aria-selected="false" aria-controls="d5" data-day="d5"><strong>08/14 · D5</strong><span>九寨沟 → 乐山</span></button>
+        <button class="day-tab" id="tab-d6" role="tab" aria-selected="false" aria-controls="d6" data-day="d6"><strong>08/15 · D6</strong><span>乐山 → 重庆</span></button>
+        <button class="day-tab" id="tab-d7" role="tab" aria-selected="false" aria-controls="d7" data-day="d7"><strong>08/16 · D7</strong><span>重庆整日</span></button>
+        <button class="day-tab" id="tab-d8" role="tab" aria-selected="false" aria-controls="d8" data-day="d8"><strong>08/17 · D8</strong><span>重庆 → 长春</span></button>
+      </div>
+
+      <section class="day-panel is-active" id="d1" role="tabpanel" aria-labelledby="tab-d1" data-city-panel="chengdu">
+        <div class="day-banner">
+          <div class="day-copy">
+            <div class="day-kicker">DAY 01 · 周一 · 抵达成都</div>
+            <h3>下午起飞，深夜只做一件事：住进去</h3>
+            <p>MU9812 晚上20:35抵达天府机场。落地后不安排夜游，直接前往市中心酒店，为次日早起看熊猫保留睡眠。</p>
+            <div class="day-meta"><span class="tag">核心：顺利入住</span><span class="tag">步行约 2–3 km</span><span class="tag">体力 1 / 5</span></div>
+          </div>
+          <div class="day-scene" aria-hidden="true">
+            <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid slice">
+              <rect width="420" height="220" fill="#173150"/><circle cx="334" cy="49" r="27" fill="#e0a126"/>
+              <path d="M44 116 L194 72 201 84 151 113 263 148 255 160 125 133 84 157 68 151 91 123 44 116Z" fill="#edf5f1"/>
+              <path d="M0 184 C105 165 185 200 270 177 C334 160 376 171 420 160V220H0Z" fill="#087f8c"/>
+            </svg>
+          </div>
+        </div>
+        <div class="day-layout">
+          <div class="timeline">
+            <article class="event transport">
+              <time class="event-time">13:40</time>
+              <div><h3>到达长春龙嘉机场 T2</h3><p>建议在起飞前约2小时15分钟到达，完成值机、托运和安检。午餐不要过油，随身保留充电宝和一件薄外套。</p></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">15:55–20:35</time>
+              <div><h3>MU9812 · 长春龙嘉 T2 → 成都天府 T2</h3><p>计划飞行4小时40分。落地前整理好随身物品，并在手机上提前叫车时仍以实际取行李时间为准。</p></div>
+            </article>
+            <article class="event">
+              <time class="event-time">20:35–21:20</time>
+              <div><h3>落地、取行李、补水</h3><p>天府机场体量大，不把“飞机落地时间”当成“坐上车时间”。取完行李后再前往网约车/出租车乘车点。</p></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">21:20–22:35</time>
+              <div><h3>天府机场 → 成都酒店</h3><p>2人带行李且时间较晚，首选正规出租车或网约车，按约60–80分钟估算。地铁18号线虽可进城，但还需换乘，不作为今晚主方案。</p><div class="event-detail"><span>目的地：顺城大街88号</span><span>深夜不拼车</span></div></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">22:35–23:15</time>
+              <div><h3>入住 + 轻食</h3><p>入住桔子酒店（成都春熙路天府广场店）。晚餐选便利店、外卖粥/面或酒店附近仍营业的简餐，不为火锅延迟休息。</p></div>
+            </article>
+          </div>
+          <aside class="side-stack">
+            <div class="side-card"><h3>今晚顺手完成</h3><ul><li>确认8/11熊猫基地上午票已实名预约。</li><li>把身份证、防晒和水放入次日日包。</li><li>设置06:20闹钟，23:30前休息。</li></ul></div>
+            <details class="side-card"><summary>航班延误怎么办</summary><div class="details-inner">无论几点落地都取消夜游，直接入住。若延误到地铁停运后，只使用机场正规出租车或网约车平台。</div></details>
+            <button class="btn small copy-btn" type="button" data-copy="四川省成都市青羊区顺城大街88号1栋1层">复制成都酒店地址</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="day-panel" id="d2" role="tabpanel" aria-labelledby="tab-d2" data-city-panel="chengdu" hidden>
+        <div class="day-banner">
+          <div class="day-copy">
+            <div class="day-kicker">DAY 02 · 周二 · 成都完整日</div>
+            <h3>清晨看熊猫，午后喝茶，夜里看成都</h3>
+            <p>把熊猫基地放到最凉、动物更活跃的早晨；中午回酒店避暑，下午从人民公园慢慢走到宽窄巷子，晚上以春熙路收尾。</p>
+            <div class="day-meta"><span class="tag">核心：熊猫 + 茶馆</span><span class="tag">步行约 10–13 km</span><span class="tag">体力 4 / 5</span></div>
+          </div>
+          <div class="day-scene" aria-hidden="true">
+            <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid slice">
+              <rect width="420" height="220" fill="#2b6c50"/>
+              <path d="M0 176 C90 119 161 173 231 119 C299 69 347 113 420 66V220H0Z" fill="#174b3b"/>
+              <circle cx="218" cy="111" r="49" fill="#f1f1e8"/><circle cx="183" cy="77" r="20" fill="#18231f"/><circle cx="253" cy="77" r="20" fill="#18231f"/>
+              <ellipse cx="199" cy="103" rx="14" ry="18" fill="#18231f"/><ellipse cx="237" cy="103" rx="14" ry="18" fill="#18231f"/><ellipse cx="218" cy="126" rx="9" ry="6" fill="#18231f"/>
+              <path d="M17 210 98 73M73 220 143 92M337 214 390 81" stroke="#65a771" stroke-width="12"/>
+            </svg>
+          </div>
+        </div>
+        <div class="day-layout">
+          <div class="timeline">
+            <article class="event">
+              <time class="event-time">06:20–07:25</time>
+              <div><h3>早餐 → 打车去熊猫基地南大门</h3><p>06:20起床，吃酒店早餐或打包。07:00左右出发，目标07:25到南大门，准备刷身份证入园。</p><div class="event-detail"><span class="must">预约上午票</span><span>身份证原件</span></div></div>
+            </article>
+            <article class="event">
+              <time class="event-time">07:30–10:50</time>
+              <div><h3>成都大熊猫繁育研究基地</h3><p>从南大门进入，优先老园区的大熊猫别墅、太阳产房/月亮产房等核心区域；具体熊猫所在馆舍以当天官方提示为准。观光车排队少于25分钟可乘，否则步行更稳。</p><div class="event-detail"><span>门票55元/成人</span><span>观光车30元/人可选</span><span>清晨优先</span></div></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">10:50–11:40</time>
+              <div><h3>离开基地 → 文殊院片区</h3><p>11点后熊猫活动减少、人流和温度上升，准时离开。打车到文殊院附近吃午餐，不继续追远端园区。</p></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">11:40–13:10</time>
+              <div><h3>成都小吃午餐 + 文殊院短走</h3><p>担担面、钟水饺、甜水面、凉粉选四样分食；随后在文殊院片区慢走，不在正午长距离暴晒。</p></div>
+            </article>
+            <article class="event">
+              <time class="event-time">13:20–15:20</time>
+              <div><h3>回酒店午休</h3><p>成都8月午后湿热，固定留出约2小时洗澡、补水和休息。九寨沟段体力更重要，不把今天排成特种兵。</p></div>
+            </article>
+            <article class="event">
+              <time class="event-time">15:40–18:30</time>
+              <div><h3>人民公园鹤鸣茶社 → 宽窄巷子</h3><p>先喝一碗盖碗茶，体验成都慢节奏；17:20左右再步行/短途打车去宽窄巷子。宽窄巷子看街巷即可，不为网红小吃排长队。</p></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">19:00–21:30</time>
+              <div><h3>春熙路 → 太古里 → IFS熊猫 + 晚餐</h3><p>晚餐选川菜或微辣火锅。饭后看IFS爬墙熊猫与太古里夜景，21:30左右回酒店装箱，为次日06:45出门做准备。</p></div>
+            </article>
+          </div>
+          <aside class="side-stack">
+            <div class="side-card"><h3>成都这一天为什么这样排</h3><ul><li>熊猫清晨更值得，且7:30可入园。</li><li>酒店在市中心，适合中午回房避暑。</li><li>人民公园与春熙路分别代表慢成都和新成都。</li></ul></div>
+            <details class="side-card" open><summary>没约到熊猫票</summary><div class="details-inner">上午改为文殊院—四川博物院/杜甫草堂，午后仍保留酒店休息、人民公园与春熙路。不要购买所谓“快速入园”服务。</div></details>
+            <details class="side-card"><summary>省力版</summary><div class="details-inner">熊猫基地10:30离开；午餐后直接回酒店；下午只保留人民公园，晚餐在春熙路附近，删除宽窄巷子。</div></details>
+          </aside>
+        </div>
+      </section>
+
+      <section class="day-panel" id="d3" role="tabpanel" aria-labelledby="tab-d3" data-city-panel="jiuzhai" hidden>
+        <div class="day-banner">
+          <div class="day-copy">
+            <div class="day-kicker">DAY 03 · 周三 · 黄龙半日</div>
+            <h3>高铁落地直奔黄龙，五彩池优先</h3>
+            <p>10:07 到黄龙九寨站后，不先去沟口，而是乘提前订好的联运车辆前往黄龙。采用“索道上行、核心彩池优先、视体力步行下山”，16:30 前离园再去九寨沟酒店。</p>
+            <div class="day-meta"><span class="tag">核心：黄龙五彩池</span><span class="tag">步行约 6–9 km</span><span class="tag urgent">体力 4.5 / 5</span></div>
+          </div>
+          <div class="day-scene" aria-hidden="true">
+            <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid slice">
+              <rect width="420" height="220" fill="#0b6570"/><circle cx="336" cy="44" r="25" fill="#e4b241"/>
+              <path d="M0 153 L91 64 150 128 224 42 334 150 420 93 420 220 0 220Z" fill="#164d55"/>
+              <path d="M42 153 L91 64 111 94 151 128 224 42 252 80 334 150" fill="none" stroke="#dbe9df" stroke-width="7" opacity=".9"/>
+              <path d="M0 170 C94 145 158 181 231 160 C305 139 345 153 420 145 L420 220 0 220Z" fill="#31a99b"/>
+              <path d="M42 184 C132 167 209 199 363 167" fill="none" stroke="#9ae1d4" stroke-width="3" opacity=".8"/>
+            </svg>
+          </div>
+        </div>
+        <div class="day-layout">
+          <div class="timeline">
+            <article class="event transport">
+              <time class="event-time">06:35–07:20</time>
+              <div><h3>退房 → 成都东站</h3><p>前一晚收好行李并结清房费，06:35 左右打车出发。到站后完成安检并购买便携早餐，避免在黄龙景区入口再花时间吃正餐。</p><div class="event-detail"><span class="must">最晚 07:25 到站</span><span>身份证随身</span><span>穿好防滑鞋</span></div></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">08:12–10:07</time>
+              <div><h3>C6362 · 成都东 → 黄龙九寨</h3><p>高铁进入川西北后海拔上升。车上补水即可，不饮酒、不剧烈活动；到站前整理好随身物品，尽快去接驳区。</p></div>
+            </article>
+            <article class="event transport alert">
+              <time class="event-time">10:07–11:10</time>
+              <div><h3>黄龙九寨站 → 黄龙景区</h3><p>下车后直接与提前预约的“车站接站—黄龙游览—九寨沟酒店”联运司机会合。大行李不进景区，事先书面确认保管方式、16:30 接回位置及最终酒店地址。</p><div class="event-detail"><span class="must">不要现场临时拼车</span><span>车程预留约 50 分钟</span><span>司机电话离线保存</span></div></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">11:10–11:35</time>
+              <div><h3>游客中心：检票准备 + 轻午餐</h3><p>吃车上带来的面包、饭团或能量棒，补水后刷身份证入园。不要吃得过饱，也不要在高海拔环境跑动赶路。</p><div class="event-detail"><span>旺季门票 170 元/成人</span><span>索道与观光车提前约</span></div></div>
+            </article>
+            <article class="event">
+              <time class="event-time">11:35–12:35</time>
+              <div><h3>索道上行 → 观光车/栈道接近五彩池</h3><p>先乘索道上山；若已买到观光车票则按现场指引接驳，未买到则控制步速走栈道。任何明显不适都停止继续上行并联系工作人员。</p><div class="event-detail"><span class="must">索道上行为主方案</span><span>不跑、不饮酒</span></div></div>
+            </article>
+            <article class="event">
+              <time class="event-time">12:35–14:05</time>
+              <div><h3>五彩池 → 黄龙古寺</h3><p>把全日最重要的时间给五彩池与古寺片区，不为单个机位久等。14:05 是硬转折点：此时必须开始下撤，才能给下山和接车留余量。</p><div class="event-detail"><span>五彩池优先</span><span class="must">14:05 开始下撤</span></div></div>
+            </article>
+            <article class="event">
+              <time class="event-time">14:05–16:20</time>
+              <div><h3>沿沟下行：争艳池—金沙铺地—迎宾池</h3><p>体力与天气允许就顺栈道步行下山；若上山排队造成延误、膝盖不适或雨势增强，删掉中下段细看，按现场条件改乘索道下行。</p><div class="event-detail"><span>边走边看，不走回头路</span><span class="must">16:20 集合</span></div></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">16:30–19:00</time>
+              <div><h3>黄龙景区 → 九寨沟酒店</h3><p>与司机在约定点汇合，沿山路前往彭丰村。车程按约 2–2.5 小时留量；晕车者按医嘱提前处理，途中不再增加松潘古城等停靠点。</p><div class="event-detail"><span>目的地：彭丰村1组122号</span><span>山路不催司机</span></div></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">19:00–20:30</time>
+              <div><h3>入住 + 清淡晚餐 + 准备九寨沟</h3><p>入住九寨沟丽呈华廷度假酒店，晚餐就近解决。回房后只完成 8/13 门票核验、日包整理和 06:20 闹钟，21:30 后不再外出。</p></div>
+            </article>
+          </div>
+          <aside class="side-stack">
+            <div class="side-card"><h3>这条路线成立的三个前提</h3><ul><li>黄龙门票、上行索道及可选观光车已提前购买。</li><li>联运车辆确认接站、保管行李、游后送九寨沟酒店。</li><li>车上带好轻午餐，11:35 左右即可入园。</li></ul></div>
+            <details class="side-card" open><summary>到晚了怎么缩短</summary><div class="details-inner">11:50 后才到景区：只走索道上行—五彩池核心—索道/最快路线下撤；13:00 后仍未入园、索道停运或出现明显不适：放弃黄龙，直接去九寨沟酒店。不要用晚到换取夜间赶山路。</div></details>
+            <details class="side-card"><summary>今晚必须确认</summary><div class="details-inner">确认 8/13 九寨沟门票与观光车、8/14 05:45 去黄龙九寨站的车辆，并请酒店准备 8/14 打包早餐。</div></details>
+            <button class="btn small copy-btn" type="button" data-copy="四川省阿坝藏族羌族自治州九寨沟县彭丰村1组122号">复制九寨沟酒店地址</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="day-panel" id="d4" role="tabpanel" aria-labelledby="tab-d4" data-city-panel="jiuzhai" hidden>
+        <div class="day-banner">
+          <div class="day-copy">
+            <div class="day-kicker">DAY 04 · 周四 · 全程核心体验</div>
+            <h3>一日走完九寨“Y”线精华</h3>
+            <p>先抢日则沟的清晨光线，中午在诺日朗中转，下午去长海与五彩池，再顺树正沟一路下行。现场以观光车调度和开放公告为准。</p>
+            <div class="day-meta"><span class="tag">核心：五花海 + 珍珠滩</span><span class="tag">步行约 9–13 km</span><span class="tag">体力 5 / 5</span></div>
+          </div>
+          <div class="day-scene" aria-hidden="true">
+            <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid slice">
+              <rect width="420" height="220" fill="#0b6974"/><path d="M0 116 65 70 123 122 193 48 254 119 330 66 420 119V220H0Z" fill="#1b4b50"/>
+              <path d="M0 147 C84 123 129 165 214 141 C288 120 339 154 420 130V220H0Z" fill="#29a89a"/>
+              <path d="M0 165 C106 146 169 183 247 159 C319 138 365 164 420 152" fill="none" stroke="#c5f0e7" stroke-width="5"/>
+              <g fill="#dbe7dc"><circle cx="47" cy="44" r="2"/><circle cx="83" cy="31" r="3"/><circle cx="337" cy="35" r="2"/></g>
+            </svg>
+          </div>
+        </div>
+        <div class="day-layout">
+          <div class="timeline">
+            <article class="event">
+              <time class="event-time">06:35–07:20</time>
+              <div><h3>早餐 → 前往游客中心</h3><p>7:20 左右到入口更稳。带身份证、雨衣、充电宝、1 瓶水和少量能量零食；不带大件行李。</p></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">08:00–09:00</time>
+              <div><h3>入园 + 观光车上行</h3><p>旺季观光车可能按客流将游客送往不同沟顶。若能选择，优先日则沟箭竹海方向；不能选择就顺调度游览，切勿逆着人流反复换车。</p><div class="event-detail"><span class="must">先看当日公告</span><span>不与调度较劲</span></div></div>
+            </article>
+            <article class="event">
+              <time class="event-time">09:00–12:10</time>
+              <div><h3>日则沟：箭竹海 → 熊猫海 → 五花海 → 珍珠滩</h3><p>核心顺序以“车 + 精华栈道”为主。五花海至少留 35 分钟；珍珠滩至瀑布建议完整步行。若上段临时关闭，从实际开放的最高点向下走。</p><div class="event-detail"><span>五花海 5.0/5</span><span>珍珠滩瀑布 4.9/5</span><span>镜海视光线决定</span></div></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">12:15–13:00</time>
+              <div><h3>诺日朗服务中心午餐</h3><p>用餐区高峰拥挤，优先快速解决：自热米饭/简餐/自带面包。不要为了餐厅排队超过 30 分钟。</p></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">13:05–15:10</time>
+              <div><h3>则查洼沟：长海 → 五彩池</h3><p>长海海拔更高，慢走、不奔跑。五彩池体量不大但色彩集中，停留约 25 分钟即可；随后乘车回诺日朗。</p><div class="event-detail"><span>高海拔慢行</span><span>长海 4.5/5</span><span>五彩池 4.7/5</span></div></div>
+            </article>
+            <article class="event">
+              <time class="event-time">15:15–17:25</time>
+              <div><h3>诺日朗瀑布 → 树正群海 → 火花海 → 出沟</h3><p>下午体力下降，只选 2–3 个点。优先诺日朗瀑布、树正群海和火花海；芦苇海适合在车上看，不为“全打卡”反复步行。</p><div class="event-detail"><span class="must">17:25 开始出沟</span><span>18:00 闭园</span></div></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">18:30–20:30</time>
+              <div><h3>晚餐 + 为清晨转场收尾</h3><p>回酒店后先洗澡、装箱，再吃饭。把第二天穿的衣服、身份证和两段车票单独放在随身包外层。</p></div>
+            </article>
+          </div>
+          <aside class="side-stack">
+            <div class="side-card"><h3>体力控制规则</h3><ul><li>每段只在“向下游”方向走，减少爬升。</li><li>下午 15:00 后不再追远端小景点。</li><li>头痛、恶心或心悸时立即休息并告知工作人员。</li></ul></div>
+            <details class="side-card" open><summary>强降雨 / 局部关闭方案</summary><div class="details-inner">完全服从景区当日调度，把开放区域走精。优先保留：五花海、珍珠滩瀑布、诺日朗瀑布、树正群海。不要翻越围挡或进入关闭栈道。</div></details>
+            <details class="side-card"><summary>省力版删减顺序</summary><div class="details-inner">先删原始森林等最上段，再删镜海专门停留，最后把树正沟改为观光车沿途观看；五花海与珍珠滩尽量保留。</div></details>
+          </aside>
+        </div>
+      </section>
+
+      <section class="day-panel" id="d5" role="tabpanel" aria-labelledby="tab-d5" data-city-panel="leshan" hidden>
+        <div class="day-banner">
+          <div class="day-copy">
+            <div class="day-kicker">DAY 05 · 周五 · 硬时限转场日</div>
+            <h3>早出九寨，午到乐山，下午见大佛</h3>
+            <p>这是最需要纪律的一天：前夜装箱、清晨准点上车、成都东不出站。抵达乐山后才放慢速度。</p>
+            <div class="day-meta"><span class="tag">核心：守住 30 分钟换乘</span><span class="tag">步行约 6–9 km</span><span class="tag">体力 4 / 5</span></div>
+          </div>
+          <div class="day-scene" aria-hidden="true">
+            <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid slice">
+              <rect width="420" height="220" fill="#8b3f2a"/><circle cx="326" cy="45" r="26" fill="#e7ad38"/>
+              <path d="M0 150 C80 105 144 141 198 105 C258 66 315 94 420 59V220H0Z" fill="#552d28"/>
+              <path d="M231 78 C212 83 202 104 202 126 L202 174 L286 174 L286 126 C286 104 275 83 256 78Z" fill="#cf7951"/>
+              <circle cx="244" cy="87" r="30" fill="#cf7951"/><path d="M223 88 Q244 99 265 88" fill="none" stroke="#552d28" stroke-width="3"/>
+              <path d="M0 185 C111 171 182 201 271 183 C334 171 375 184 420 177V220H0Z" fill="#1f7181"/>
+            </svg>
+          </div>
+        </div>
+        <div class="day-layout">
+          <div class="timeline">
+            <article class="event alert">
+              <time class="event-time">05:25–05:45</time>
+              <div><h3>退房，带走打包早餐</h3><p>车辆建议 05:45 左右离开酒店，06:00 是心理上的绝对上限。山路和雨情都可能增加时间，不能按普通城市打车估算。</p><div class="event-detail"><span class="must">前晚结清</span><span class="must">05:45 发车</span><span>提前预订车辆</span></div></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">05:45–08:00</time>
+              <div><h3>九寨沟沟口 → 黄龙九寨站</h3><p>目标 08:00 左右到站，留足安检与道路波动时间。途中只吃易消化早餐；晕车者上车前按医嘱用药。</p></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">09:04–10:45</time>
+              <div><h3>C5784 · 黄龙九寨 → 成都东</h3><p>到站前 15 分钟去洗手间、穿好外套、收好行李，列车开门后立即下车找“便捷换乘”指引。</p></div>
+            </article>
+            <article class="event alert">
+              <time class="event-time">10:45–11:15</time>
+              <div><h3>成都东站内便捷换乘</h3><p><strong>不要出站。</strong>跟随“便捷换乘”标识，向工作人员主动出示 G3437 车票，直接去对应检票口。若前车晚点，车上就向乘务员求助。</p><div class="event-detail"><span class="must">仅 30 分钟</span><span class="must">不去便利店</span><span class="must">不托运大件</span></div></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">11:15–12:01</time>
+              <div><h3>G3437 · 成都东 → 乐山</h3><p>上车即代表最难节点已完成。可在车上联系酒店，确认先寄存行李。</p></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">12:10–14:00</time>
+              <div><h3>酒店寄存 / 入住 + 嘉兴路午餐</h3><p>住桔子酒店（乐山世豪广场嘉兴路美食街店，柏杨西路266号）。午餐选跷脚牛肉 + 甜皮鸭，控制辣度和分量。</p></div>
+            </article>
+            <article class="event">
+              <time class="event-time">14:20–18:00</time>
+              <div><h3>乐山大佛游山：北门 → 凌云寺 → 九曲栈道 → 佛脚</h3><p>提前预约 14:00–15:00 入园时段。暑期栈道可能排队；若现场预估排队超过 90 分钟、暴雨或栈道关闭，立即改为游船远观全貌。</p><div class="event-detail"><span>游山首选 4.8/5</span><span>台阶多</span><span>雨天防滑</span></div></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">19:00–21:00</time>
+              <div><h3>嘉兴路美食街，少量多样</h3><p>建议 4 选 3：钵钵鸡、豆腐脑、油炸串串、蛋烘糕/冰粉。不要每家点主食，给第二天早餐留空间。</p></div>
+            </article>
+          </div>
+          <aside class="side-stack">
+            <div class="side-card"><h3>误车兜底</h3><ul><li>前车晚点时先找乘务员开具/确认晚点信息。</li><li>到站立刻联系站内工作人员，尝试赶上 G3437。</li><li>确认赶不上时，在 12306 改签当日后续成都东—乐山车次；大佛改为游船或缩短游山。</li></ul></div>
+            <details class="side-card" open><summary>黄龙已放在哪一天</summary><div class="details-inner">黄龙已经安排在 8/12 高铁抵达后，不占用今天的 09:04 早车与成都东换乘。今天不再增加任何川西支线，只守住两段铁路和乐山大佛。</div></details>
+            <button class="btn small copy-btn" type="button" data-copy="四川省乐山市市中区柏杨西路266号">复制乐山酒店地址</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="day-panel" id="d6" role="tabpanel" aria-labelledby="tab-d6" data-city-panel="chongqing" hidden>
+        <div class="day-banner">
+          <div class="day-copy">
+            <div class="day-kicker">DAY 06 · 周六 · 山城初见</div>
+            <h3>上午吃乐山，傍晚看重庆亮灯</h3>
+            <p>上午只在酒店附近活动，确保 10:00 前到乐山站。重庆首日用“李子坝—解放碑—洪崖洞”建立立体城市感。</p>
+            <div class="day-meta"><span class="tag">核心：洪崖洞夜景</span><span class="tag">步行约 7–10 km</span><span class="tag">体力 3 / 5</span></div>
+          </div>
+          <div class="day-scene" aria-hidden="true">
+            <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid slice">
+              <rect width="420" height="220" fill="#142744"/><circle cx="72" cy="50" r="23" fill="#e4ab36"/>
+              <path d="M0 164 38 164 38 113 71 113 71 143 103 143 103 82 132 82 132 164 164 164 164 52 195 52 195 164 221 164 221 102 250 102 250 164 280 164 280 70 316 70 316 164 345 164 345 120 375 120 375 164 420 164V220H0Z" fill="#0a1628"/>
+              <g fill="#e6a937"><rect x="113" y="96" width="8" height="7"/><rect x="174" y="67" width="8" height="7"/><rect x="291" y="85" width="8" height="7"/><rect x="353" y="133" width="8" height="7"/></g>
+              <path d="M0 184 C120 168 247 202 420 176" fill="none" stroke="#248da0" stroke-width="12" opacity=".75"/>
+            </svg>
+          </div>
+        </div>
+        <div class="day-layout">
+          <div class="timeline">
+            <article class="event food">
+              <time class="event-time">07:30–09:00</time>
+              <div><h3>乐山早餐：豆腐脑 + 咔饼 / 牛华麻辣烫择一</h3><p>就在酒店或嘉兴路附近解决，不跨城追网红店。08:50 回酒店收行李。</p></div>
+            </article>
+            <article class="event alert">
+              <time class="event-time">09:20–10:00</time>
+              <div><h3>退房 → 乐山站</h3><p>周六可能堵车，建议 09:20 左右出发，10:00 前到站。不要把早餐拖到 09:30 以后。</p><div class="event-detail"><span class="must">10:00 到站</span></div></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">11:10–13:00</time>
+              <div><h3>G5415 · 乐山 → 重庆西</h3><p>到站后优先打车去酒店，2 人带行李时比多次地铁换乘更省力。</p></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">13:10–14:25</time>
+              <div><h3>重庆西 → 观音桥北滨一路亚朵</h3><p>周六路况波动大，按 45–70 分钟估算。酒店位于北滨一路290号；入住后休息 30–45 分钟，避开最热时段。</p></div>
+            </article>
+            <article class="event">
+              <time class="event-time">15:40–16:40</time>
+              <div><h3>李子坝轻轨穿楼</h3><p>从酒店打车约十几分钟更直接。观景平台停留 25–35 分钟即可，随后前往解放碑片区。</p></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">17:20–19:00</time>
+              <div><h3>魁星楼 → 解放碑 → 八一路晚餐</h3><p>先用魁星楼理解“22 楼也是地面”，再步行到解放碑。晚餐不要排超长网红队，选小面、酸辣粉或江湖菜。</p></div>
+            </article>
+            <article class="event">
+              <time class="event-time">19:10–21:10</time>
+              <div><h3>洪崖洞亮灯 + 千厮门大桥视角</h3><p>先在江北嘴/千厮门大桥方向看整体，再决定是否进入洪崖洞。内部商业化、人流密，整体夜景比逐层逛更值得。</p><div class="event-detail"><span>夜景 4.8/5</span><span>防拥挤</span><span>回程网约车难叫</span></div></div>
+            </article>
+          </div>
+          <aside class="side-stack">
+            <div class="side-card"><h3>重庆交通原则</h3><ul><li>导航看“步行海拔”，不要只看直线距离。</li><li>2人跨江或带行李优先打车；核心区短途用轨道。</li><li>黄色出租车也叫“黄色法拉利”，正规打表即可。</li></ul></div>
+            <details class="side-card"><summary>洪崖洞太挤怎么办</summary><div class="details-inner">直接在千厮门大桥或江北嘴看全景，拍完回酒店。不要在拥堵人群中强行下到一层；第二天还有朝天门和渡船视角。</div></details>
+            <button class="btn small copy-btn" type="button" data-copy="重庆市两江新区北滨一路290号">复制重庆酒店地址</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="day-panel" id="d7" role="tabpanel" aria-labelledby="tab-d7" data-city-panel="chongqing" hidden>
+        <div class="day-banner">
+          <div class="day-copy">
+            <div class="day-kicker">DAY 07 · 周日 · 山城纵深</div>
+            <h3>从老街走到索道，再从江上看城</h3>
+            <p>把重庆最热的中午留给室内或午餐，上午走南岸老街与索道，下午回到朝天门，傍晚乘 15 元小渡看两江四岸。</p>
+            <div class="day-meta"><span class="tag">核心：索道 + 两江小渡</span><span class="tag">步行约 10–14 km</span><span class="tag">体力 4 / 5</span></div>
+          </div>
+          <div class="day-scene" aria-hidden="true">
+            <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid slice">
+              <rect width="420" height="220" fill="#12263f"/><path d="M0 151 80 122 143 149 217 91 298 144 370 108 420 136V220H0Z" fill="#0a1727"/>
+              <path d="M20 63 392 108" stroke="#e0a126" stroke-width="3"/><rect x="176" y="73" width="42" height="28" rx="4" fill="#bd5b38" transform="rotate(7 197 87)"/>
+              <path d="M0 180 C98 150 184 199 273 169 C337 147 377 167 420 154V220H0Z" fill="#0f7181"/>
+              <path d="M46 188 C159 166 258 200 385 170" fill="none" stroke="#65d0c0" stroke-width="3"/>
+            </svg>
+          </div>
+        </div>
+        <div class="day-layout">
+          <div class="timeline">
+            <article class="event transport">
+              <time class="event-time">07:45–08:30</time>
+              <div><h3>酒店早餐 → 打车到龙门浩老街</h3><p>早出能避开部分人流与暑热。穿防滑运动鞋，山城石阶不适合硬底鞋。</p></div>
+            </article>
+            <article class="event">
+              <time class="event-time">08:30–10:15</time>
+              <div><h3>龙门浩老街 → 下浩里</h3><p>顺着坡道看东水门大桥、渝中天际线和旧街巷。路线尽量向下，不在每个机位排队。</p><div class="event-detail"><span>城市层次 4.7/5</span><span>清晨更舒适</span></div></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">10:20–11:20</time>
+              <div><h3>长江索道：南站 → 北站</h3><p>提前在官方渠道预约 10:00–11:00 左右时段，从南岸上车通常更顺路线。若排队超过 60 分钟，保留已预约时段，不现场反复改方向。</p><div class="event-detail"><span class="must">提前预约</span><span>运营通常 08:00–22:00</span></div></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">11:40–13:30</time>
+              <div><h3>十八梯 / 山城巷择一 + 午餐</h3><p>炎热时只选一个片区。午餐可吃重庆小面或小份江湖菜；火锅留到晚餐，避免中午吃完暴走。</p></div>
+            </article>
+            <article class="event">
+              <time class="event-time">14:30–16:50</time>
+              <div><h3>湖广会馆 → 朝天门 / 来福士外观</h3><p>湖广会馆有室内停留，可避一段热。之后看两江交汇与朝天门城市轴线，不把时间花在商场购物。</p></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">17:20–19:20</time>
+              <div><h3>弹子石老街 + 18:30 两江小渡 B 线</h3><p>17:20 左右到弹子石渡口，提前 10–15 分钟候船。B 线每日 18:30 一班，15元/人，环看两江交汇、重庆大剧院、朝天门和桥梁。</p><div class="event-detail"><span class="must">当天再确认航班</span><span>18:30 唯一班</span><span>性价比 5.0/5</span></div></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">19:40–21:30</time>
+              <div><h3>重庆火锅晚餐</h3><p>选离酒店不远、排队可控的社区店。点鸳鸯锅或微辣，必点毛肚/鸭肠按个人饮食习惯调整；次日飞行，不吃到过饱。</p></div>
+            </article>
+          </div>
+          <aside class="side-stack">
+            <div class="side-card"><h3>今天的预约优先级</h3><ul><li>第一优先：长江索道时段。</li><li>第二优先：确认两江小渡 B 线是否因水位/天气调整。</li><li>湖广会馆可根据热度和体力现场决定。</li></ul></div>
+            <details class="side-card"><summary>高温省力版</summary><div class="details-inner">上午保留龙门浩 + 索道；中午回酒店午休；16:30 直接去弹子石老街和渡口。删除十八梯、山城巷与湖广会馆，不影响核心体验。</div></details>
+            <details class="side-card"><summary>轮渡停航版</summary><div class="details-inner">在弹子石老街观景台看日落，之后前往南滨路或江北嘴看夜景。不要临时改买高价两江游，除非你们确实想要约 1 小时观光船体验。</div></details>
+          </aside>
+        </div>
+      </section>
+
+      <section class="day-panel" id="d8" role="tabpanel" aria-labelledby="tab-d8" data-city-panel="chongqing" hidden>
+        <div class="day-banner">
+          <div class="day-copy">
+            <div class="day-kicker">DAY 08 · 周一 · 返程日</div>
+            <h3>上午留给观音桥，午后稳稳起飞</h3>
+            <p>返程日不跨江、不去远景点。酒店周边散步和采购即可，11:30 左右出发去江北机场 T3。</p>
+            <div class="day-meta"><span class="tag">核心：12:45 前到 T3</span><span class="tag">步行约 3–5 km</span><span class="tag">体力 2 / 5</span></div>
+          </div>
+          <div class="day-scene" aria-hidden="true">
+            <svg viewBox="0 0 420 220" preserveAspectRatio="xMidYMid slice">
+              <rect width="420" height="220" fill="#15324d"/><circle cx="318" cy="56" r="32" fill="#e0a126"/>
+              <path d="M0 165 C100 140 194 182 274 153 C334 131 380 145 420 137V220H0Z" fill="#087f8c"/>
+              <path d="M69 110 L202 68 207 79 161 107 254 139 247 150 137 124 98 147 83 142 104 117 69 110Z" fill="#edf5f1"/>
+            </svg>
+          </div>
+        </div>
+        <div class="day-layout">
+          <div class="timeline">
+            <article class="event food">
+              <time class="event-time">07:30–08:30</time>
+              <div><h3>早餐 + 完成装箱</h3><p>检查身份证、充电器、伴手礼液体与托运行李。办理线上值机，并确认登机口是否位于 J/K/L/M 卫星厅。</p></div>
+            </article>
+            <article class="event">
+              <time class="event-time">08:45–10:30</time>
+              <div><h3>北仓文创街区 / 观音桥商圈慢逛</h3><p>二选一即可：北仓适合街巷与咖啡，观音桥适合买伴手礼。保持在酒店 15 分钟车程内。</p></div>
+            </article>
+            <article class="event alert">
+              <time class="event-time">10:45–11:30</time>
+              <div><h3>回酒店取行李、退房</h3><p>11:30 左右叫车去机场。若遇暴雨或早高峰残余拥堵，提前到 11:10 出发。</p><div class="event-detail"><span class="must">不再加景点</span><span>检查房间</span></div></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">11:30–12:30</time>
+              <div><h3>酒店 → 重庆江北机场 T3</h3><p>打车最省力。目标 12:30–12:45 到 T3；若登机口在 T3B 卫星厅，安检后还需乘机场捷运“小火车”。</p></div>
+            </article>
+            <article class="event food">
+              <time class="event-time">12:45–14:25</time>
+              <div><h3>值机 / 托运 / 安检 + 机场午餐</h3><p>国内航班建议至少提前 2 小时到达。14:25 前完成用餐并前往登机口，不在安检外久留。</p></div>
+            </article>
+            <article class="event transport">
+              <time class="event-time">15:10–18:25</time>
+              <div><h3>CA4017 · 重庆江北 T3 → 长春龙嘉 T2</h3><p>计划飞行 3 小时 15 分。落地后先确认托运行李，再安排回程交通。</p></div>
+            </article>
+          </div>
+          <aside class="side-stack">
+            <div class="side-card"><h3>返程三条底线</h3><ul><li>11:30 左右必须离开酒店。</li><li>12:45 前抵达 T3。</li><li>若登机口为 J/K/L/M，预留卫星厅捷运时间。</li></ul></div>
+            <details class="side-card"><summary>下雨时怎么改</summary><div class="details-inner">取消北仓，改在观音桥商场或酒店大堂休息；10:45 直接取行李。返程日的体验价值远低于准点抵达机场。</div></details>
+          </aside>
+        </div>
+      </section>
+    </section>
+
+    <section id="choices">
+      <div class="section-head">
+        <div><div class="eyebrow">Included / 景点取舍</div><h2>保留最值得的，明确不塞什么</h2></div>
+        <p class="section-note">这次不是“景点数量最大化”，而是让成都熊猫、黄龙彩池、九寨沟、乐山大佛和重庆夜色各自拥有清楚的主次。</p>
+      </div>
+      <div class="decision-grid">
+        <article class="decision-card">
+          <div class="decision-art" aria-hidden="true"><svg viewBox="0 0 320 128" preserveAspectRatio="none"><rect width="320" height="128" fill="#2d7354"/><circle cx="160" cy="65" r="39" fill="#f0f1e9"/><circle cx="130" cy="37" r="17" fill="#17221e"/><circle cx="190" cy="37" r="17" fill="#17221e"/><ellipse cx="146" cy="60" rx="11" ry="14" fill="#17221e"/><ellipse cx="174" cy="60" rx="11" ry="14" fill="#17221e"/><ellipse cx="160" cy="79" rx="8" ry="5" fill="#17221e"/><path d="M17 128 79 30M246 128 300 32" stroke="#70ad79" stroke-width="12"/></svg></div>
+          <div class="decision-copy"><div class="decision-title"><h3>成都熊猫基地</h3><span class="score">4.9/5</span></div><p>8月11日7:30入园，抓住清晨凉爽和熊猫相对活跃的时段；11点左右离开，避免最热和最拥挤时段。</p><span class="tag good">必须保留</span></div>
+        </article>
+        <article class="decision-card">
+          <div class="decision-art" aria-hidden="true"><svg viewBox="0 0 320 128" preserveAspectRatio="none"><rect width="320" height="128" fill="#0d7781"/><path d="M0 73 62 28 111 70 169 22 223 72 278 38 320 67V128H0Z" fill="#174a50"/><path d="M0 88 C70 69 128 105 194 83 C248 65 278 83 320 72V128H0Z" fill="#2caa9b"/></svg></div>
+          <div class="decision-copy"><div class="decision-title"><h3>九寨沟 Y 线精华</h3><span class="score">5.0/5</span></div><p>全程最适合你们的自然体验，8/13 留整天。采用观光车 + 关键栈道，避免无效体力消耗。</p><span class="tag good">必须保留</span></div>
+        </article>
+        <article class="decision-card">
+          <div class="decision-art" aria-hidden="true"><svg viewBox="0 0 320 128" preserveAspectRatio="none"><rect width="320" height="128" fill="#9b4930"/><circle cx="162" cy="55" r="28" fill="#d17c55"/><path d="M122 128V88Q122 60 150 59H174Q202 60 202 88V128Z" fill="#d17c55"/><path d="M0 112 C83 95 140 123 215 106 C260 96 292 102 320 96V128H0Z" fill="#1d7280"/></svg></div>
+          <div class="decision-copy"><div class="decision-title"><h3>乐山大佛游山</h3><span class="score">4.8/5</span></div><p>有历史感也能近距离感受尺度。下午体力允许就游山；暴雨、酷热或栈道长队则改游船。</p><span class="tag good">主线保留</span></div>
+        </article>
+        <article class="decision-card">
+          <div class="decision-art" aria-hidden="true"><svg viewBox="0 0 320 128" preserveAspectRatio="none"><rect width="320" height="128" fill="#152b48"/><path d="M0 95H35V58H60V91H92V34H121V95H159V52H188V95H222V26H254V95H282V64H320V128H0Z" fill="#0a1728"/><g fill="#dda22e"><rect x="101" y="48" width="7" height="6"/><rect x="233" y="42" width="7" height="6"/></g></svg></div>
+          <div class="decision-copy"><div class="decision-title"><h3>重庆立体夜景</h3><span class="score">4.8/5</span></div><p>李子坝、洪崖洞外观、索道与小渡共同构成体验，比只在网红点排队更完整。</p><span class="tag good">必须保留</span></div>
+        </article>
+        <article class="decision-card">
+          <div class="decision-art" aria-hidden="true"><svg viewBox="0 0 320 128" preserveAspectRatio="none"><rect width="320" height="128" fill="#d7dec8"/><path d="M0 105 58 58 104 91 165 36 220 88 270 54 320 82V128H0Z" fill="#91a889"/><g fill="#75b7c8" stroke="#f6ead8" stroke-width="3"><ellipse cx="105" cy="91" rx="48" ry="12"/><ellipse cx="165" cy="77" rx="54" ry="13"/><ellipse cx="221" cy="95" rx="43" ry="11"/></g></svg></div>
+          <div class="decision-copy"><div class="decision-title"><h3>黄龙五彩池</h3><span class="score">4.7/5</span></div><p>8/12 高铁到站后顺路加入。采用索道上行、五彩池优先、16:30前离园；只有提前订好联运车辆和行李保管才执行。</p><span class="tag good">主线新增</span></div>
+        </article>
+        <article class="decision-card">
+          <div class="decision-art" aria-hidden="true"><svg viewBox="0 0 320 128" preserveAspectRatio="none"><rect width="320" height="128" fill="#dfe8e2"/><path d="M0 100 70 49 130 91 198 34 269 84 320 58V128H0Z" fill="#9db7ac"/><path d="M20 112 102 63M151 99 230 47" stroke="#a1322e" stroke-width="9" opacity=".85"/></svg></div>
+          <div class="decision-copy"><div class="decision-title"><h3>武隆 / 磁器口</h3><span class="score" style="color:var(--danger)">本次不排</span></div><p>武隆至少占完整一天；磁器口与本次重庆主线方向相反。继续加点会压缩九寨沟恢复时间和山城完整日。</p><span class="tag urgent">主动删减</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="todo">
+      <div class="section-head">
+        <div><div class="eyebrow">Action list / 可勾选</div><h2>出发前，把这 10 件事变成“已完成”</h2></div>
+        <p class="section-note">勾选状态只保存在当前浏览器，不会上传。最紧急的是黄龙门票与联运车辆、九寨沟门票、返程接驳和乐山大佛时段。</p>
+      </div>
+      <div class="checklist-grid">
+        <article class="checklist-card">
+          <h3>交通与门票</h3>
+          <label class="check-row"><input type="checkbox" data-check="panda-ticket"><span><strong>8/11 熊猫基地上午票</strong><span>全线上实名预约，选择上午时段，携带身份证原件。</span></span></label>
+          <label class="check-row"><input type="checkbox" data-check="jzg-ticket"><span><strong>8/13 九寨沟门票 + 观光车</strong><span>旺季限量实名预约，非预约不出行。</span></span></label>
+          <label class="check-row"><input type="checkbox" data-check="huanglong-ticket"><span><strong>8/12 黄龙门票 + 上行索道</strong><span>同步确认观光车余票；凭身份证入园，保存订单截图。</span></span></label>
+          <label class="check-row"><input type="checkbox" data-check="huanglong-transfer"><span><strong>车站 → 黄龙 → 九寨沟酒店联运</strong><span>绑定 C6362，书面确认行李保管、16:30接回和酒店地址。</span></span></label>
+          <label class="check-row"><input type="checkbox" data-check="bus-out"><span><strong>8/14 沟口 → 黄龙九寨站车辆</strong><span>确认 05:45 左右从酒店出发。</span></span></label>
+          <label class="check-row"><input type="checkbox" data-check="leshan-ticket"><span><strong>8/14 乐山大佛游山票</strong><span>预约 14:00–15:00 入园时段；记下退改规则。</span></span></label>
+        </article>
+        <article class="checklist-card">
+          <h3>天气、体验与返程</h3>
+          <label class="check-row"><input type="checkbox" data-check="jzg-alert"><span><strong>8/12 晚刷新九寨沟官方公告</strong><span>强降雨后开放范围可能动态调整。</span></span></label>
+          <label class="check-row"><input type="checkbox" data-check="cable"><span><strong>8/16 长江索道预约</strong><span>优先南站 → 北站，约 10:00–11:00。</span></span></label>
+          <label class="check-row"><input type="checkbox" data-check="ferry"><span><strong>8/16 确认两江小渡 B 线</strong><span>计划 18:30 弹子石发船，受水位与天气影响。</span></span></label>
+          <label class="check-row"><input type="checkbox" data-check="flight"><span><strong>8/17 航班值机与登机口</strong><span>确认是否 J/K/L/M 卫星厅登机口。</span></span></label>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>准备进度</span><strong id="progressText">0 / 10</strong></div>
+            <div class="progress-bar" aria-hidden="true"><i id="progressBar"></i></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="risks">
+      <div class="section-head">
+        <div><div class="eyebrow">Guardrails / 风险与备选</div><h2>真正会打乱行程的只有五件事</h2></div>
+        <p class="section-note">把不可控因素提前写进计划，现场就不需要在压力下临时做决定。</p>
+      </div>
+      <div class="risk-grid">
+        <article class="risk-card high"><span class="risk-level">高风险 · 8/12</span><h3>黄龙时间、海拔与联运</h3><p>必须提前订好门票、索道和“车站—景区—酒店”车辆。14:05开始下撤、16:20集合；火车晚点、索道停运或明显不适时缩线或放弃，不夜赶山路。</p></article>
+        <article class="risk-card high"><span class="risk-level">高风险 · 8/14</span><h3>成都东 30 分钟换乘</h3><p>不出站、提前收行李、主动找工作人员；前车晚点时在车上就求助。赶不上立即改签后续乐山车次。</p></article>
+        <article class="risk-card high"><span class="risk-level">高风险 · 8/14</span><h3>九寨沟清晨山路</h3><p>05:45 左右出发，前夜结账和装箱；不要临时依赖叫车。预订车辆时明确车次是 09:04 C5784。</p></article>
+        <article class="risk-card"><span class="risk-level">中风险 · 九寨沟</span><h3>主汛期强降雨与局部关闭</h3><p>8月是主汛期。8/12 晚及 8/13 早刷新官方小程序；开放多少走多少，绝不进入封闭栈道。</p></article>
+        <article class="risk-card"><span class="risk-level">中风险 · 重庆/乐山</span><h3>暑热、暴雨与水运调整</h3><p>重庆把户外放在早晚，中午安排室内；乐山游船和重庆小渡均可能因水位停航，以当天通知为准。</p></article>
+      </div>
+    </section>
+
+    <section id="packing">
+      <div class="section-head">
+        <div><div class="eyebrow">Pack smart / 行李</div><h2>同一只箱子，要跨三种气候</h2></div>
+        <p class="section-note">九寨沟早晚凉、紫外线强；乐山和重庆湿热。采用“薄层叠穿”，比带一件厚外套更实用。</p>
+      </div>
+      <div class="pack-grid">
+        <article class="pack-card"><h3>九寨沟层</h3><ul><li>轻薄防水外套 / 一次性雨衣</li><li>速干长裤、遮阳帽、防晒霜</li><li>防滑运动鞋与备用袜</li><li>个人常用药、晕车药（按医嘱）</li></ul></article>
+        <article class="pack-card"><h3>乐山重庆层</h3><ul><li>透气短袖与折叠伞</li><li>小毛巾 / 湿巾</li><li>防水手机袋</li><li>少量肠胃药（按医嘱）</li></ul></article>
+        <article class="pack-card"><h3>随身硬件</h3><ul><li>身份证与电子订单截图</li><li>充电宝、充电线、双口充电器</li><li>轻便日包，不带大行李进景区</li><li>少量现金，主用微信/支付宝</li></ul></article>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-head">
+        <div><div class="eyebrow">Verified / 核验来源</div><h2>出发前只回看这些官方信息</h2></div>
+        <p class="section-note">实时开放、航班和水运信息仍可能变化。页面已把需要再次确认的时间点放进可勾选清单。</p>
+      </div>
+      <div class="source-list">
+        <a class="source-link" href="https://www.panda.org.cn/cn/service/ticket/" target="_blank" rel="noreferrer"><span><strong>成都熊猫基地官方票务</strong><small>3—10月7:30起入园、提前14日实名预约</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.songpan.gov.cn/spxrmzf/c100050/202606/3df8c02579764fbfa23a41d6d29a4fb0.shtml" target="_blank" rel="noreferrer"><span><strong>黄龙 2026 旺季开放安排</strong><small>8:00开园、旺季全价票170元；索道运营截止时间</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.huanglong.com/cn/" target="_blank" rel="noreferrer"><span><strong>黄龙景区官方网站</strong><small>出发前查看索道排队、道路与景区实时态势</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.jiuzhai.com/news/notice/11241-2026-07-08-03-30-49" target="_blank" rel="noreferrer"><span><strong>九寨沟 2026 暑期公告</strong><small>高铁接驳、暑期出行提示</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.jzg.gov.cn/jzgrmzf/jgsf/202603/ccfa4789012d490596552a1680ffaaec.shtml" target="_blank" rel="noreferrer"><span><strong>九寨沟旺季接待规则</strong><small>8:00–14:00 入园、18:00 闭园、限量预约</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.jiuzhai.com/news/notice/11278-2026-07-26-15-39-38" target="_blank" rel="noreferrer"><span><strong>九寨沟强降雨后游览调整示例</strong><small>说明为什么必须在出发前刷新公告</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.jiuzhai.com/intelligent-service/way-of-play" target="_blank" rel="noreferrer"><span><strong>九寨沟官方游玩方式</strong><small>Y 字三沟与日则沟核心景点</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.leshan.gov.cn/lsswszf/bmdt/92337825/index.html" target="_blank" rel="noreferrer"><span><strong>乐山大佛景区管理信息</strong><small>暑期动态、开放及安全公告入口</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.cq.gov.cn/ywdt/jrcq/202503/t20250302_14359633_app.html" target="_blank" rel="noreferrer"><span><strong>重庆长江索道运营信息</strong><small>常规暑期运营时段参考</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.cq.gov.cn/ywdt/bmts/202606/t20260603_15725752.html" target="_blank" rel="noreferrer"><span><strong>两江小渡 B 线官方信息</strong><small>每日 18:30 弹子石发船、15元/人</small></span><span class="arrow">↗</span></a>
+        <a class="source-link" href="https://www.12306.cn/" target="_blank" rel="noreferrer"><span><strong>铁路 12306</strong><small>出发前核对车次、晚点与检票口</small></span><span class="arrow">↗</span></a>
+      </div>
+      <p class="asof">信息核验日期：2026-08-04。黄龙 8/12 路线按旺季开放安排重新核对；酒店与已付款车票/机票信息来自你提供的订单截图，页面未展示订单号等敏感信息。</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><strong>一句话执行版</strong><p>8/10 晚上稳稳住进成都，8/11 清晨看熊猫、午后喝茶，8/12 高铁落地直奔黄龙再住进沟口，8/13 把九寨沟走精，8/14 守住早车与 30 分钟换乘，8/15 看山城亮灯，8/16 从索道走到江上，8/17 中午前去机场。</p></div>
+      <div class="utility">2026.08.10—08.17<br>2 travelers · no driving</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="5" cy="5" r="2.5"></circle><circle cx="19" cy="19" r="2.5"></circle><path d="M7.5 5h3.2a3 3 0 0 1 3 3v8a3 3 0 0 0 3 3h0"></path></symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M7 3v4M17 3v4M3 10h18M8 14h3M13 14h3M8 17h3"></path></symbol>
+    <symbol id="icon-print" viewBox="0 0 24 24"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v4a2 2 0 0 1-2 2h-2"></path><rect x="7" y="14" width="10" height="7"></rect><path d="M17 11h.01"></path></symbol>
+    <symbol id="icon-focus" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"></path><circle cx="12" cy="12" r="3"></circle></symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M10.3 3.6 2.5 17a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0Z"></path><path d="M12 8v5M12 17h.01"></path></symbol>
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9H3Z"></path><path d="M9 20v-6h6v6M6 11c2-1 4-1 6 0s4 1 6 0"></path></symbol>
+    <symbol id="icon-checklist" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M3 6l1.5 1.5L7 4M3 12l1.5 1.5L7 10M3 18l1.5 1.5L7 16"></path></symbol>
+    <symbol id="icon-signpost" viewBox="0 0 24 24"><path d="M12 3v18M5 5h13l2 3-2 3H5Z"></path><path d="M7 14h11l2 3-2 3H7"></path></symbol>
+    <symbol id="icon-bag" viewBox="0 0 24 24"><path d="M5 8h14l1 13H4Z"></path><path d="M9 8V5a3 3 0 0 1 6 0v3M8 13c2 1 6 1 8 0"></path></symbol>
+  </svg>
+
+  <script>
+    (() => {
+      const dayTabs = [...document.querySelectorAll('.day-tab')];
+      const dayPanels = [...document.querySelectorAll('.day-panel')];
+      const mapNodes = [...document.querySelectorAll('.city-node')];
+      const mapDetail = document.getElementById('mapDetail');
+      const toast = document.getElementById('toast');
+      let toastTimer;
+
+      const cityCopy = {
+        chengdu: {
+          title: '成都 · 两晚慢慢进入川味节奏',
+          text: '8月10日晚抵达后只办理入住；8月11日清晨看熊猫，午后喝盖碗茶、逛宽窄巷子，晚间走春熙路。8月14日在成都东仅做同站换乘。',
+          tags: ['住宿2晚 · 8/11完整日', '8/14 仅30分钟换乘'], day: 'd2', urgent: true
+        },
+        huanglong: {
+          title: '黄龙 · 8月12日高铁落地后的核心半日',
+          text: '10:07到黄龙九寨站，提前订车接站并保管行李；索道上行、五彩池优先，14:05开始下撤，16:30前离园再去九寨沟酒店。',
+          tags: ['旺季票170元', '联运必须预订', '索道上行'], day: 'd3', urgent: true
+        },
+        jiuzhai: {
+          title: '九寨沟 · 全程自然体验核心',
+          text: '8月12日游完黄龙后抵达沟口，住彭丰村两晚；8月13日整日游览 Y 字三沟，8月14日清晨赶车离开。',
+          tags: ['住宿2晚', '主汛期看公告', '最高体力日'], day: 'd4'
+        },
+        leshan: {
+          title: '乐山 · 一晚也能抓住精华',
+          text: '8月14日中午抵达，下午游山近看大佛，晚上把嘉兴路美食拆成小份多样；8月15日上午不远行。',
+          tags: ['建议1晚', '大佛游山', '美食密度高'], day: 'd5'
+        },
+        chongqing: {
+          title: '重庆 · 两晚体验山城立体感',
+          text: '第一晚看李子坝与洪崖洞，完整日走龙门浩、索道、朝天门和两江小渡；返程日上午只在观音桥附近。',
+          tags: ['建议2晚', '户外放早晚', '打车+轨道'], day: 'd6'
+        }
+      };
+
+      function selectDay(id, shouldScroll = false) {
+        dayTabs.forEach(btn => {
+          const active = btn.dataset.day === id;
+          btn.setAttribute('aria-selected', String(active));
+          btn.tabIndex = active ? 0 : -1;
+        });
+        dayPanels.forEach(panel => {
+          const active = panel.id === id;
+          panel.classList.toggle('is-active', active);
+          panel.hidden = !active;
+        });
+        if (shouldScroll) document.getElementById('days').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      dayTabs.forEach((btn, index) => {
+        btn.addEventListener('click', () => selectDay(btn.dataset.day));
+        btn.addEventListener('keydown', event => {
+          if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;
+          event.preventDefault();
+          const delta = event.key === 'ArrowRight' ? 1 : -1;
+          const next = dayTabs[(index + delta + dayTabs.length) % dayTabs.length];
+          next.focus(); selectDay(next.dataset.day);
+        });
+      });
+
+      function activateCity(city, jump = true) {
+        const data = cityCopy[city];
+        if (!data) return;
+        mapNodes.forEach(node => node.classList.toggle('is-active', node.dataset.city === city));
+        mapDetail.innerHTML = `<h3>${data.title}</h3><p>${data.text}</p><div class="map-detail-meta">${data.tags.map((tag, i) => `<span class="tag ${data.urgent && i === 1 ? 'urgent' : ''}">${tag}</span>`).join('')}</div>`;
+        if (jump) selectDay(data.day, true);
+      }
+
+      mapNodes.forEach(node => {
+        node.addEventListener('click', () => activateCity(node.dataset.city));
+        node.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activateCity(node.dataset.city); }
+        });
+      });
+
+      function showToast(message) {
+        clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add('show');
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+      }
+
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          try { await navigator.clipboard.writeText(btn.dataset.copy); showToast('地址已复制'); }
+          catch { showToast('复制失败，请手动长按地址'); }
+        });
+      });
+
+      document.getElementById('printBtn').addEventListener('click', () => window.print());
+      document.getElementById('compactBtn').addEventListener('click', event => {
+        const enabled = document.body.classList.toggle('compact-mode');
+        event.currentTarget.setAttribute('aria-pressed', String(enabled));
+        event.currentTarget.lastChild.textContent = enabled ? ' 显示全部' : ' 只看主线';
+        showToast(enabled ? '已隐藏备选与补充模块' : '已恢复完整内容');
+      });
+
+      const checks = [...document.querySelectorAll('[data-check]')];
+      const progressText = document.getElementById('progressText');
+      const progressBar = document.getElementById('progressBar');
+      function updateProgress() {
+        const complete = checks.filter(c => c.checked).length;
+        progressText.textContent = `${complete} / ${checks.length}`;
+        progressBar.style.width = `${(complete / checks.length) * 100}%`;
+      }
+      checks.forEach(check => {
+        const key = `chuanyu-trip-v1-${check.dataset.check}`;
+        try { check.checked = localStorage.getItem(key) === '1'; } catch {}
+        check.addEventListener('change', () => {
+          try { localStorage.setItem(key, check.checked ? '1' : '0'); } catch {}
+          updateProgress();
+        });
+      });
+      updateProgress();
+
+      const tripStart = new Date('2026-08-10T00:00:00+08:00');
+      const tripEnd = new Date('2026-08-17T23:59:59+08:00');
+      const now = new Date();
+      const countdown = document.getElementById('countdown');
+      const dayDiff = Math.ceil((tripStart - now) / 86400000);
+      if (now < tripStart) countdown.textContent = `D−${Math.max(0, dayDiff)}`;
+      else if (now <= tripEnd) {
+        const n = Math.min(8, Math.max(1, Math.floor((now - tripStart) / 86400000) + 1));
+        countdown.textContent = `DAY ${n}`;
+        selectDay(`d${n}`);
+      } else countdown.textContent = '已完成';
+    })();
+  </script>
+</body>
+</html>
