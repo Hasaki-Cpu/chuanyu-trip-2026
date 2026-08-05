@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="2026年8月10日至17日，长春—成都—九寨沟—乐山—重庆—长春，2人非自驾逐日旅行计划。">
-  <title>川渝八日 · 每日详细行程</title>
+  <title>川渝八日 · 简明行程</title>
   <style>
     :root {
       color-scheme: light;
@@ -287,8 +287,45 @@
     .toast { position: fixed; left: 50%; bottom: 24px; z-index: 1000; padding: 10px 15px; border-radius: 10px; background: var(--ink); color: #fff; opacity: 0; pointer-events: none; transform: translate(-50%, 12px); transition: opacity .2s ease, transform .2s ease; }
     .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-    .compact-mode .side-stack, .compact-mode #choices, .compact-mode #packing, .compact-mode .source-list { display: none; }
+    .compact-mode #overview,
+    .compact-mode #choices,
+    .compact-mode #risks,
+    .compact-mode #packing,
+    .compact-mode #sources,
+    .compact-mode .side-stack,
+    .compact-mode .danger-strip,
+    .compact-mode .hero-sketch,
+    .compact-mode .hero-lead,
+    .compact-mode .hero-stats,
+    .compact-mode .route-ticket,
+    .compact-mode #days > .section-head,
+    .compact-mode .day-copy > p,
+    .compact-mode .day-scene,
+    .compact-mode .event p,
+    .compact-mode #todo .section-note,
+    .compact-mode .check-row span > span { display: none; }
+    .compact-mode .hero { padding: 30px 0 24px; }
+    .compact-mode .hero-grid { display: block; }
+    .compact-mode .hero h1 { margin-bottom: 16px; font-size: clamp(2.5rem, 8vw, 4.8rem); }
+    .compact-mode .hero-actions { margin-bottom: 0; }
+    .compact-mode main { padding-top: 26px; }
+    .compact-mode #days { margin-bottom: 34px; }
     .compact-mode .day-layout { grid-template-columns: 1fr; }
+    .compact-mode .day-banner { grid-template-columns: 1fr; padding: 18px 20px; min-height: 0; }
+    .compact-mode .day-copy h3 { margin-bottom: 10px; font-size: clamp(1.45rem, 4vw, 2rem); }
+    .compact-mode .day-meta { margin-top: 0; }
+    .compact-mode .timeline { gap: 8px; }
+    .compact-mode .event { padding: 13px 15px; }
+    .compact-mode .event h3 { margin-bottom: 0; font-size: 1rem; line-height: 1.4; }
+    .compact-mode .event-detail { margin-top: 8px; }
+    .compact-mode #todo { margin-bottom: 32px; }
+    .compact-mode #todo .section-head { margin-bottom: 14px; }
+    .compact-mode .check-row { padding: 10px 0; }
+    .compact-mode .sticky-nav a[href="#overview"],
+    .compact-mode .sticky-nav a[href="#risks"],
+    .compact-mode .sticky-nav a[href="#packing"] { display: none; }
+    .compact-mode .sticky-nav .container { max-width: 420px; justify-content: center; }
+    .compact-mode .sticky-nav a { flex: 1; max-width: 180px; }
 
     @media (min-width: 720px) {
       .hero { padding: 56px 0 42px; }
@@ -678,7 +715,7 @@
     }
   </style>
 </head>
-<body>
+<body class="compact-mode">
   <a class="skip-link" href="#main">跳到每日行程</a>
 
   <header class="hero">
@@ -693,15 +730,15 @@
         <div class="hero-actions">
           <a class="btn" href="#days">
             <svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
-            查看每日时间表
+            直接看行程
           </a>
           <button class="btn secondary" id="printBtn" type="button">
             <svg class="icon" aria-hidden="true"><use href="#icon-print"></use></svg>
             打印 / 保存 PDF
           </button>
-          <button class="btn secondary" id="compactBtn" type="button" aria-pressed="false">
+          <button class="btn secondary" id="compactBtn" type="button" aria-pressed="true">
             <svg class="icon" aria-hidden="true"><use href="#icon-focus"></use></svg>
-            只看主线
+            查看详细版
           </button>
         </div>
       </div>
@@ -1562,8 +1599,8 @@
       document.getElementById('compactBtn').addEventListener('click', event => {
         const enabled = document.body.classList.toggle('compact-mode');
         event.currentTarget.setAttribute('aria-pressed', String(enabled));
-        event.currentTarget.lastChild.textContent = enabled ? ' 显示全部' : ' 只看主线';
-        showToast(enabled ? '已隐藏备选与补充模块' : '已恢复完整内容');
+        event.currentTarget.lastChild.textContent = enabled ? ' 查看详细版' : ' 回到简洁版';
+        showToast(enabled ? '已切换为简洁行程' : '已显示完整说明');
       });
 
       const checks = [...document.querySelectorAll('[data-check]')];
