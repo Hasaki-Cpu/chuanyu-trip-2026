@@ -548,6 +548,38 @@
     .booking-card:nth-child(even) { transform: rotate(.18deg); }
     .booking-card.is-risk { border: 2px dashed var(--danger); background: #fff0e8; }
 
+    .journey-timeline { position: relative; display: grid; gap: 16px; }
+    .journey-timeline::before {
+      content: ""; position: absolute; top: 26px; bottom: 26px; left: 46px;
+      border-left: 2px dashed rgba(108,59,57,.36);
+    }
+    .journey-day { position: relative; display: grid; grid-template-columns: 94px 1fr; gap: 16px; align-items: start; }
+    .journey-date {
+      position: relative; z-index: 1; display: grid; place-items: center; align-content: center;
+      width: 94px; min-height: 78px; padding: 10px; border: 1.5px solid var(--line);
+      border-radius: 20px 14px 22px 16px; background: var(--surface); text-align: center;
+      box-shadow: 3px 4px 0 rgba(91,77,65,.07);
+    }
+    .journey-date strong { color: var(--lake); font-family: var(--mono); font-size: 1.05rem; }
+    .journey-date span { color: var(--muted); font-size: .78rem; }
+    .journey-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 10px; }
+    .journey-item {
+      min-width: 0; padding: 14px 16px; border: 1.5px solid rgba(152,133,115,.45);
+      border-radius: 18px 13px 20px 14px; background: rgba(251,242,229,.94);
+      box-shadow: 3px 5px 0 rgba(91,77,65,.06);
+    }
+    .journey-item.urgent { border: 2px dashed var(--danger); background: #fff0e8; }
+    .journey-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 7px; }
+    .journey-kind { padding: 3px 8px; border-radius: 999px; font-size: .72rem; font-weight: 900; letter-spacing: .08em; }
+    .journey-item.flight .journey-kind { color: #fff; background: var(--lake); }
+    .journey-item.train .journey-kind { color: #fff; background: var(--success); }
+    .journey-item.hotel .journey-kind { color: var(--ink); background: #e2cda4; }
+    .journey-code { color: var(--lake); font-family: var(--mono); font-weight: 900; }
+    .journey-item h3 { margin: 0 0 5px; font-family: var(--sans); font-size: .98rem; line-height: 1.45; }
+    .journey-time { margin: 0; color: var(--ink); font-family: var(--mono); font-size: .9rem; font-weight: 900; }
+    .journey-detail { margin: 5px 0 0; color: var(--muted); font-size: .8rem; line-height: 1.5; }
+    .journey-note { margin: 14px 0 0; color: var(--muted); font-size: .8rem; }
+
     .day-controls { gap: 10px; padding: 5px 3px 13px; scrollbar-color: #a79a86 transparent; }
     .day-tab {
       min-width: 118px; min-height: 70px; padding: 10px 13px; border: 1.5px solid var(--line);
@@ -665,6 +697,13 @@
       section { scroll-margin-top: 18px; margin-bottom: 62px; }
       .section-head { display: block; }
       .section-note { margin-top: 15px; }
+      .journey-timeline::before { left: 30px; }
+      .journey-day { grid-template-columns: 62px minmax(0,1fr); gap: 10px; }
+      .journey-date { width: 62px; min-height: 66px; padding: 7px 4px; }
+      .journey-date strong { font-size: .82rem; }
+      .journey-date span { font-size: .68rem; }
+      .journey-items { grid-template-columns: 1fr; }
+      .journey-item { padding: 12px 13px; }
       .map-wrap { margin-inline: 9px; }
       .booking-stack { padding: 11px; }
       .day-controls { margin-inline: -12px; padding-inline: 12px; }
@@ -726,7 +765,6 @@
           已锁定车次与酒店 · 2人非自驾
         </div>
         <h1>川·渝<br><span>八日行</span></h1>
-        <p class="hero-lead">2026 年 8 月 10—17 日，先在成都看熊猫、喝盖碗茶，再从黄龙彩池走到九寨海子与三江大佛，最后进入山城夜色。主线按最新已付款订单倒推，重点守住 8/14 成都东换乘和 8/15 大佛早场。</p>
         <div class="hero-actions">
           <a class="btn" href="#days">
             <svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
@@ -768,12 +806,6 @@
         </svg>
       </div>
 
-      <div class="hero-stats" aria-label="行程摘要">
-        <div class="hero-stat"><strong>8天 / 7晚</strong><span>8月10日周一—17日周一</span></div>
-        <div class="hero-stat"><strong>2航班 / 4铁路</strong><span>另有 3 段川西北公路接驳</span></div>
-        <div class="hero-stat"><strong id="countdown">D−6</strong><span>页面按本机日期自动更新</span></div>
-      </div>
-
       <div class="route-ticket" aria-label="旅行路线：长春、成都、黄龙、九寨沟、乐山、重庆、长春">
         <div class="ticket-line">
           <div class="ticket-stop"><i></i><span>长春</span></div>
@@ -797,7 +829,7 @@
 
   <nav class="sticky-nav" aria-label="页面导航">
     <div class="container">
-      <a href="#overview"><svg class="icon" aria-hidden="true"><use href="#icon-home"></use></svg><span>总览</span></a>
+      <a href="#journey"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg><span>交通住宿</span></a>
       <a href="#days"><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>每日</span></a>
       <a href="#todo"><svg class="icon" aria-hidden="true"><use href="#icon-checklist"></use></svg><span>清单</span></a>
       <a href="#risks"><svg class="icon" aria-hidden="true"><use href="#icon-signpost"></use></svg><span>提醒</span></a>
@@ -806,92 +838,104 @@
   </nav>
 
   <main id="main" class="container">
-    <section id="overview">
+    <section id="journey">
       <div class="section-head">
         <div>
-          <div class="eyebrow">Route / 位置关系</div>
-          <h2>先看清路线，再决定每天体力怎么花</h2>
+          <div class="eyebrow">Booked timeline / 已确认订单</div>
+          <h2>飞机 · 火车 · 酒店时间线</h2>
         </div>
-        <p class="section-note">成都在四川盆地西缘；黄龙位于九寨沟东南方向，是 8/12 高铁到站后的顺路节点；乐山在成都以南，重庆在更东侧。点击地图节点可跳到对应日程。</p>
+        <p class="section-note">按日期查看固定行程；“约”表示当前运行图预计到达时间，出发前以订单和 12306 为准。</p>
       </div>
 
-      <div class="overview-grid">
-        <article class="panel map-panel">
-          <div class="map-top">
-            <div class="eyebrow">交互地图 · 点击城市</div>
-          </div>
-          <div class="map-wrap">
-            <svg viewBox="0 0 690 390" role="img" aria-labelledby="mapTitle mapDesc">
-              <title id="mapTitle">成都、黄龙、九寨沟、乐山与重庆位置关系图</title>
-              <desc id="mapDesc">简化地图显示从成都向北先到黄龙再到九寨沟，乐山位于成都南方，重庆位于成都东侧。</desc>
-              <path class="map-land" d="M72,50 C150,12 264,28 320,70 C386,24 518,34 614,94 C676,133 661,226 622,286 C583,348 452,354 354,327 C282,366 159,339 98,289 C39,240 21,128 72,50Z"></path>
-              <path class="map-river" d="M115,272 C217,244 265,251 339,232 C430,209 480,173 618,190"></path>
-              <path class="map-route" d="M272,205 L285,140 L226,104 M272,205 L260,282 M272,205 C365,197 438,202 515,214"></path>
-              <text x="40" y="370" fill="var(--muted)" font-size="12">中国西南 · 示意图（非比例尺）</text>
-              <g class="city-node" data-city="jiuzhai" role="button" tabindex="0" aria-label="查看九寨沟详情">
-                <circle class="hit" cx="226" cy="104" r="24"></circle>
-                <circle cx="226" cy="104" r="12"></circle><text x="244" y="110">九寨沟</text>
-              </g>
-              <g class="city-node" data-city="huanglong" role="button" tabindex="0" aria-label="查看黄龙详情">
-                <circle class="hit" cx="285" cy="140" r="24"></circle>
-                <circle cx="285" cy="140" r="10"></circle><text x="303" y="146">黄龙</text>
-              </g>
-              <g class="city-node is-active" data-city="chengdu" role="button" tabindex="0" aria-label="查看成都详情">
-                <circle class="hit" cx="272" cy="205" r="24"></circle>
-                <circle cx="272" cy="205" r="12"></circle><text x="290" y="211">成都</text>
-              </g>
-              <g class="city-node" data-city="leshan" role="button" tabindex="0" aria-label="查看乐山详情">
-                <circle class="hit" cx="260" cy="282" r="24"></circle>
-                <circle cx="260" cy="282" r="12"></circle><text x="278" y="288">乐山</text>
-              </g>
-              <g class="city-node" data-city="chongqing" role="button" tabindex="0" aria-label="查看重庆详情">
-                <circle class="hit" cx="515" cy="214" r="24"></circle>
-                <circle cx="515" cy="214" r="12"></circle><text x="533" y="220">重庆</text>
-              </g>
-            </svg>
-          </div>
-          <div class="map-detail" id="mapDetail" aria-live="polite">
-            <h3>成都 · 两晚一整日，先进入川味节奏</h3>
-            <p>8月10日晚抵达天府机场，入住春熙路—天府广场片区；8月11日安排熊猫基地、人民公园与春熙路，8月12日从成都东出发。</p>
-            <div class="map-detail-meta"><span class="tag">住宿2晚</span><span class="tag">8/11完整游览</span><span class="tag urgent">8/14约47分钟换乘</span></div>
+      <div class="journey-timeline" aria-label="飞机、火车与酒店预订时间线">
+        <article class="journey-day">
+          <div class="journey-date"><strong>08/10</strong><span>周一</span></div>
+          <div class="journey-items">
+            <div class="journey-item flight">
+              <div class="journey-top"><span class="journey-kind">飞机</span><span class="journey-code">MU9812</span></div>
+              <h3>东方航空 · 长春龙嘉 T2 → 成都天府 T2</h3>
+              <p class="journey-time">15:55—20:35</p>
+            </div>
+            <div class="journey-item hotel">
+              <div class="journey-top"><span class="journey-kind">酒店</span><span class="journey-code">2晚</span></div>
+              <h3>桔子酒店（成都春熙路天府广场店）</h3>
+              <p class="journey-time">08/10 入住 · 08/12 退房</p>
+              <p class="journey-detail">青羊区顺城大街88号1栋1层</p>
+            </div>
           </div>
         </article>
 
-        <aside class="panel booking-stack" aria-label="固定订单">
-          <div class="eyebrow">Locked / 已付款节点</div>
-          <article class="booking-card">
-            <div class="topline"><strong>8/10 · MU9812</strong><span class="tag good">已订</span></div>
-            <div class="booking-time">长春龙嘉 T2 15:55 → 成都天府 T2 20:35</div>
-            <p>落地后建议直接打车去市中心酒店。</p>
-          </article>
-          <article class="booking-card">
-            <div class="topline"><strong>8/10—12 · 成都2晚</strong><span class="tag good">已订</span></div>
-            <div class="booking-time">桔子酒店 · 春熙路天府广场店</div>
-            <p>青羊区顺城大街88号1栋1层。</p>
-          </article>
-          <article class="booking-card">
-            <div class="topline"><strong>8/12 · C6362</strong><span class="tag good">已订</span></div>
-            <div class="booking-time">成都东 08:12 → 黄龙九寨 10:07*</div>
-            <p>之后按“黄龙景区半日游 → 九寨沟酒店”联运。</p>
-          </article>
-          <article class="booking-card is-risk">
-            <div class="topline"><strong>8/14 · C6368 + C6325</strong><span class="tag urgent">同站换乘</span></div>
-            <div class="booking-time">黄龙九寨 10:30 → 成都东约12:23 / 13:10 → 乐山约14:08*</div>
-            <p>两张票均已更新；成都东预留约 47 分钟，仍按便捷换乘走。</p>
-          </article>
-          <article class="booking-card">
-            <div class="topline"><strong>8/15 · G5797</strong><span class="tag good">已改签</span></div>
-            <div class="booking-time">乐山 14:06 → 重庆西 16:15*</div>
-            <p>上午安排乐山大佛 07:30 早场，13:00 前到乐山站。</p>
-          </article>
-          <article class="booking-card">
-            <div class="topline"><strong>8/17 · CA4017</strong><span class="tag good">已订</span></div>
-            <div class="booking-time">重庆江北 T3 15:10 → 长春龙嘉 T2 18:25</div>
-            <p>建议 12:45 前到 T3，预留卫星厅捷运时间。</p>
-          </article>
-          <p class="muted" style="margin:0;font-size:.78rem">* 车票出发时间按 2026-08-05 最新订单更新；到达时间按当前运行图填写，出发前仍以 12306 当日信息为准。</p>
-        </aside>
+        <article class="journey-day">
+          <div class="journey-date"><strong>08/12</strong><span>周三</span></div>
+          <div class="journey-items">
+            <div class="journey-item train">
+              <div class="journey-top"><span class="journey-kind">火车</span><span class="journey-code">C6362</span></div>
+              <h3>成都东 → 黄龙九寨</h3>
+              <p class="journey-time">08:12—10:07</p>
+            </div>
+            <div class="journey-item hotel">
+              <div class="journey-top"><span class="journey-kind">酒店</span><span class="journey-code">2晚</span></div>
+              <h3>九寨沟丽呈华廷度假酒店</h3>
+              <p class="journey-time">08/12 入住 · 08/14 退房</p>
+              <p class="journey-detail">高级双床房 · 九寨沟沟口片区</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="journey-day">
+          <div class="journey-date"><strong>08/14</strong><span>周五</span></div>
+          <div class="journey-items">
+            <div class="journey-item train urgent">
+              <div class="journey-top"><span class="journey-kind">火车</span><span class="journey-code">C6368</span></div>
+              <h3>黄龙九寨 → 成都东</h3>
+              <p class="journey-time">10:30—约12:23</p>
+              <p class="journey-detail">到站后不出站，直接便捷换乘</p>
+            </div>
+            <div class="journey-item train urgent">
+              <div class="journey-top"><span class="journey-kind">火车</span><span class="journey-code">C6325</span></div>
+              <h3>成都东 → 乐山</h3>
+              <p class="journey-time">13:10—约14:08</p>
+              <p class="journey-detail">成都东换乘约47分钟</p>
+            </div>
+            <div class="journey-item hotel">
+              <div class="journey-top"><span class="journey-kind">酒店</span><span class="journey-code">1晚</span></div>
+              <h3>桔子酒店（乐山世豪广场嘉兴路美食街店）</h3>
+              <p class="journey-time">08/14 入住 · 08/15 退房</p>
+              <p class="journey-detail">乐山市市中区柏杨西路266号</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="journey-day">
+          <div class="journey-date"><strong>08/15</strong><span>周六</span></div>
+          <div class="journey-items">
+            <div class="journey-item train">
+              <div class="journey-top"><span class="journey-kind">火车</span><span class="journey-code">G5797</span></div>
+              <h3>乐山 → 重庆西</h3>
+              <p class="journey-time">14:06—16:15</p>
+            </div>
+            <div class="journey-item hotel">
+              <div class="journey-top"><span class="journey-kind">酒店</span><span class="journey-code">2晚</span></div>
+              <h3>重庆观音桥北滨一路江景亚朵酒店</h3>
+              <p class="journey-time">08/15 入住 · 08/17 退房</p>
+              <p class="journey-detail">重庆市江北区御龙路290号</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="journey-day">
+          <div class="journey-date"><strong>08/17</strong><span>周一</span></div>
+          <div class="journey-items">
+            <div class="journey-item flight">
+              <div class="journey-top"><span class="journey-kind">飞机</span><span class="journey-code">CA4017</span></div>
+              <h3>中国国际航空 · 重庆江北 T3 → 长春龙嘉 T2</h3>
+              <p class="journey-time">15:10—18:25</p>
+              <p class="journey-detail">建议12:45前抵达重庆江北机场T3</p>
+            </div>
+          </div>
+        </article>
       </div>
+      <p class="journey-note">订单信息更新于 2026-08-05；铁路到达时间如有调整，以 12306 当日显示为准。</p>
     </section>
 
     <section id="days">
@@ -1508,38 +1552,8 @@
     (() => {
       const dayTabs = [...document.querySelectorAll('.day-tab')];
       const dayPanels = [...document.querySelectorAll('.day-panel')];
-      const mapNodes = [...document.querySelectorAll('.city-node')];
-      const mapDetail = document.getElementById('mapDetail');
       const toast = document.getElementById('toast');
       let toastTimer;
-
-      const cityCopy = {
-        chengdu: {
-          title: '成都 · 两晚慢慢进入川味节奏',
-          text: '8月10日晚抵达后只办理入住；8月11日清晨看熊猫，午后喝盖碗茶、逛宽窄巷子，晚间走春熙路。8月14日在成都东仅做同站换乘。',
-          tags: ['住宿2晚 · 8/11完整日', '8/14 约47分钟换乘'], day: 'd2', urgent: true
-        },
-        huanglong: {
-          title: '黄龙 · 8月12日高铁落地后的核心半日',
-          text: '10:07到黄龙九寨站，提前订车接站并保管行李；索道上行、五彩池优先，14:05开始下撤，16:30前离园再去九寨沟酒店。',
-          tags: ['旺季票170元', '联运必须预订', '索道上行'], day: 'd3', urgent: true
-        },
-        jiuzhai: {
-          title: '九寨沟 · 全程自然体验核心',
-          text: '8月12日游完黄龙后抵达沟口，住彭丰村两晚；8月13日整日游览 Y 字三沟，8月14日清晨赶车离开。',
-          tags: ['住宿2晚', '主汛期看公告', '最高体力日'], day: 'd4'
-        },
-        leshan: {
-          title: '乐山 · 一晚也能抓住精华',
-          text: '8月14日约14:08抵达后入住休整，晚上把嘉兴路美食拆成小份多样；8月15日预约07:30早场游大佛，14:06乘G5797去重庆。',
-          tags: ['住宿1晚', '大佛早场', '10:45硬离场'], day: 'd6', urgent: true
-        },
-        chongqing: {
-          title: '重庆 · 两晚体验山城立体感',
-          text: '8月15日16:15到重庆西，第一晚以洪崖洞为核心、李子坝视体力决定；完整日走龙门浩、索道、朝天门和两江小渡，返程日上午只在观音桥附近。',
-          tags: ['建议2晚', '户外放早晚', '打车+轨道'], day: 'd6'
-        }
-      };
 
       function selectDay(id, shouldScroll = false) {
         dayTabs.forEach(btn => {
@@ -1563,21 +1577,6 @@
           const delta = event.key === 'ArrowRight' ? 1 : -1;
           const next = dayTabs[(index + delta + dayTabs.length) % dayTabs.length];
           next.focus(); selectDay(next.dataset.day);
-        });
-      });
-
-      function activateCity(city, jump = true) {
-        const data = cityCopy[city];
-        if (!data) return;
-        mapNodes.forEach(node => node.classList.toggle('is-active', node.dataset.city === city));
-        mapDetail.innerHTML = `<h3>${data.title}</h3><p>${data.text}</p><div class="map-detail-meta">${data.tags.map((tag, i) => `<span class="tag ${data.urgent && i === 1 ? 'urgent' : ''}">${tag}</span>`).join('')}</div>`;
-        if (jump) selectDay(data.day, true);
-      }
-
-      mapNodes.forEach(node => {
-        node.addEventListener('click', () => activateCity(node.dataset.city));
-        node.addEventListener('keydown', event => {
-          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activateCity(node.dataset.city); }
         });
       });
 
@@ -1624,14 +1623,10 @@
       const tripStart = new Date('2026-08-10T00:00:00+08:00');
       const tripEnd = new Date('2026-08-17T23:59:59+08:00');
       const now = new Date();
-      const countdown = document.getElementById('countdown');
-      const dayDiff = Math.ceil((tripStart - now) / 86400000);
-      if (now < tripStart) countdown.textContent = `D−${Math.max(0, dayDiff)}`;
-      else if (now <= tripEnd) {
+      if (now >= tripStart && now <= tripEnd) {
         const n = Math.min(8, Math.max(1, Math.floor((now - tripStart) / 86400000) + 1));
-        countdown.textContent = `DAY ${n}`;
         selectDay(`d${n}`);
-      } else countdown.textContent = '已完成';
+      }
     })();
   </script>
 </body>
